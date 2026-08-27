@@ -10,8 +10,22 @@ export default function Hero() {
     <section id="dht-control" className="relative bg-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Texte */}
-          <div className="flex-1 text-center md:text-left">
+          {/* Image — en premier sur mobile, à droite sur desktop */}
+          <div className="order-1 md:order-2 flex-1 relative w-full -mx-4 md:mx-0">
+            <div className="absolute -inset-6 bg-blue-light rounded-[3rem] -z-10 hidden md:block" />
+            <div className="relative w-full h-[420px] sm:h-[520px] md:h-[500px] md:rounded-[2rem] overflow-hidden md:shadow-xl">
+              <Image
+                src="/images/hero-model.jpg"
+                alt="OKA Nutrition DHT Control"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Texte — en second sur mobile, à gauche sur desktop */}
+          <div className="order-2 md:order-1 flex-1 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-blue-light text-blue-dark text-xs font-bold px-4 py-2 rounded-full mb-5">
               <span className="text-yellow-400">★★★★★</span>
               +5000 hommes satisfaits
@@ -34,20 +48,6 @@ export default function Hero() {
               <a href="#formule" className="btn-outline py-3 px-8">
                 Voir la formule
               </a>
-            </div>
-          </div>
-
-          {/* Image — pleine largeur sur mobile, encadrée sur desktop */}
-          <div className="flex-1 relative w-full -mx-4 md:mx-0">
-            <div className="absolute -inset-6 bg-blue-light rounded-[3rem] -z-10 hidden md:block" />
-            <div className="relative w-full h-[420px] sm:h-[520px] md:h-[500px] md:rounded-[2rem] overflow-hidden md:shadow-xl">
-              <Image
-                src="/images/hero-model.jpg"
-                alt="OKA Nutrition DHT Control"
-                fill
-                className="object-cover"
-                priority
-              />
             </div>
           </div>
         </div>
