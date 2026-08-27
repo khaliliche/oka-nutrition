@@ -29,7 +29,39 @@ body {
 .animate-pulse-blue {
   animation: pulse-blue 2s infinite;
 }
-
+/* Hero image: no card, no hard edges — dissolves into the section background */
+.hero-image-blend {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 68%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 68%,
+    transparent 100%
+  );
+}
+@media (max-width: 767px) {
+  .hero-image-blend {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 70%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 8%,
+      black 70%,
+      transparent 100%
+    );
+  }
+}
 .divider-blue {
   height: 4px;
   width: 80px;
