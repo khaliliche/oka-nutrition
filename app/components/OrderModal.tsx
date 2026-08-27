@@ -92,22 +92,22 @@ export default function OrderModal() {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-navy/70 backdrop-blur-sm flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) {
           close();
         }
       }}
     >
-      <div className="bg-white w-full max-w-2xl max-h-[92vh] overflow-y-auto shadow-2xl">
+      <div className="bg-navy-light border border-white/10 w-full max-w-2xl max-h-[92vh] overflow-y-auto shadow-2xl rounded-2xl">
 
-        <div className="sticky top-0 z-20 bg-white border-b border-gray-100 px-6 md:px-8 py-5 flex items-center justify-between">
+        <div className="sticky top-0 z-20 bg-navy-light/95 backdrop-blur border-b border-white/10 px-6 md:px-8 py-5 flex items-center justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-[0.22em] text-charcoal-light">
               OKA Nutrition
             </p>
 
-            <h2 className="font-heading text-2xl md:text-3xl text-navy mt-1">
+            <h2 className="font-heading text-2xl md:text-3xl text-white mt-1">
               Votre commande
             </h2>
           </div>
@@ -115,7 +115,7 @@ export default function OrderModal() {
           <button
             type="button"
             onClick={close}
-            className="w-10 h-10 flex items-center justify-center border border-gray-200 text-navy text-xl hover:bg-grey-bg transition"
+            className="w-10 h-10 flex items-center justify-center border border-white/15 rounded-full text-white text-xl hover:bg-white/5 transition"
             aria-label="Fermer"
           >
             ×
@@ -126,19 +126,19 @@ export default function OrderModal() {
 
           <div className="flex items-center gap-3 mb-7">
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 bg-navy text-white flex items-center justify-center text-[10px]">
+              <span className="w-7 h-7 rounded-full bg-brass text-white flex items-center justify-center text-[10px]">
                 1
               </span>
 
-              <span className="text-xs font-medium text-navy">
+              <span className="text-xs font-medium text-white">
                 Choisir la cure
               </span>
             </div>
 
-            <span className="h-px w-8 bg-gray-200" />
+            <span className="h-px w-8 bg-white/15" />
 
             <div className="flex items-center gap-2">
-              <span className="w-7 h-7 bg-grey-bg text-charcoal-light flex items-center justify-center text-[10px]">
+              <span className="w-7 h-7 rounded-full bg-navy text-charcoal-light flex items-center justify-center text-[10px]">
                 2
               </span>
 
@@ -157,19 +157,19 @@ export default function OrderModal() {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedOffer(item.id)}
-                  className={`relative text-left border-2 transition-all duration-200 ${
+                  className={`relative text-left rounded-xl overflow-hidden border-2 transition-all duration-200 ${
                     selected
-                      ? "border-navy"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-brass"
+                      : "border-white/10 hover:border-white/25"
                   }`}
                 >
                   {item.popular && (
-                    <span className="absolute top-2 left-2 z-10 bg-navy text-white text-[9px] px-2 py-1">
+                    <span className="absolute top-2 left-2 z-10 bg-brass text-white text-[9px] px-2 py-1 rounded-full">
                       RECOMMANDÉ
                     </span>
                   )}
 
-                  <div className="h-32 sm:h-40 bg-grey-bg flex items-center justify-center p-4">
+                  <div className="h-32 sm:h-40 bg-navy flex items-center justify-center p-4">
                     <img
                       src={item.image}
                       alt=""
@@ -177,27 +177,27 @@ export default function OrderModal() {
                     />
                   </div>
 
-                  <div className="p-4">
+                  <div className="p-4 bg-navy-light">
                     <div className="flex items-center justify-between">
-                      <span className="font-heading text-lg text-navy">
+                      <span className="font-heading text-lg text-white">
                         {item.label}
                       </span>
 
                       <span
                         className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                           selected
-                            ? "border-navy"
-                            : "border-gray-300"
+                            ? "border-brass"
+                            : "border-white/25"
                         }`}
                       >
                         {selected && (
-                          <span className="w-2.5 h-2.5 rounded-full bg-navy" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-brass" />
                         )}
                       </span>
                     </div>
 
                     <div className="flex items-baseline gap-2 mt-2">
-                      <span className="font-semibold text-navy">
+                      <span className="font-semibold text-white">
                         {item.price}
                       </span>
 
@@ -211,13 +211,13 @@ export default function OrderModal() {
             })}
           </div>
 
-          <div className="border-t border-gray-100 pt-7">
+          <div className="border-t border-white/10 pt-7">
             <div className="mb-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal-light mb-2">
                 Livraison
               </p>
 
-              <h3 className="font-heading text-xl md:text-2xl text-navy">
+              <h3 className="font-heading text-xl md:text-2xl text-white">
                 Vos coordonnées
               </h3>
             </div>
@@ -232,7 +232,7 @@ export default function OrderModal() {
                 onChange={(e) =>
                   setForm({ ...form, nom: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
+                className="w-full bg-navy border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-charcoal-light outline-none focus:border-brass transition"
               />
 
               <input
@@ -243,7 +243,7 @@ export default function OrderModal() {
                 onChange={(e) =>
                   setForm({ ...form, telephone: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
+                className="w-full bg-navy border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-charcoal-light outline-none focus:border-brass transition"
               />
 
               <input
@@ -254,7 +254,7 @@ export default function OrderModal() {
                 onChange={(e) =>
                   setForm({ ...form, ville: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
+                className="w-full bg-navy border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-charcoal-light outline-none focus:border-brass transition"
               />
 
               <textarea
@@ -265,28 +265,28 @@ export default function OrderModal() {
                   setForm({ ...form, adresse: e.target.value })
                 }
                 rows={3}
-                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition resize-none"
+                className="w-full bg-navy border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-charcoal-light outline-none focus:border-brass transition resize-none"
               />
 
-              <div className="bg-grey-bg p-4 mt-5 flex items-center justify-between">
+              <div className="bg-navy rounded-lg p-4 mt-5 flex items-center justify-between">
                 <div>
                   <p className="text-[9px] uppercase tracking-[0.2em] text-charcoal-light">
                     Votre sélection
                   </p>
 
-                  <p className="font-heading text-lg text-navy mt-1">
+                  <p className="font-heading text-lg text-white mt-1">
                     {offer.label}
                   </p>
                 </div>
 
-                <p className="font-heading text-xl text-navy">
+                <p className="font-heading text-xl text-brass-light">
                   {offer.price}
                 </p>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-navy text-white py-4 text-sm font-medium hover:bg-navy-light transition-all mt-1"
+                className="w-full bg-brass text-white py-4 rounded-full text-sm font-medium hover:bg-brass-light transition-all mt-1"
               >
                 Confirmer ma commande
               </button>

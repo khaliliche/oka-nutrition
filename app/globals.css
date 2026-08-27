@@ -1,21 +1,27 @@
 ﻿@import "tailwindcss";
 
 @theme {
-  --color-navy: #0f2036;
-  --color-navy-light: #1c3a5e;
-  --color-cream: #f7f3ec;
-  --color-charcoal: #23282d;
-  --color-charcoal-light: #6b7178;
-  --color-brass: #a9824c;
-  --color-brass-light: #cba874;
+  --color-navy: #05070b;
+  --color-navy-light: #10161f;
+  --color-cream: #ffffff;
+  --color-charcoal: #ffffff;
+  --color-charcoal-light: #9aa4b2;
+  --color-brass: #2f6feb;
+  --color-brass-light: #5b8dfd;
+  --color-grey-bg: #10161f;
+
+  /* new: for light/white sections */
+  --color-ink: #0b1220;
+  --color-slate: #5b6472;
+  --color-mist: #f4f6f9;
 
   --font-heading: var(--font-playfair);
   --font-body: var(--font-dmsans);
 }
 
 :root {
-  --background: #f7f3ec;
-  --foreground: #23282d;
+  --background: #05070b;
+  --foreground: #ffffff;
 }
 
 html {
@@ -51,7 +57,7 @@ button {
 }
 
 ::selection {
-  background: var(--color-navy);
+  background: var(--color-brass);
   color: white;
 }
 
