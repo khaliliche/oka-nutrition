@@ -9,6 +9,7 @@ import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
+import OrderModal from "./components/OrderModal";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
 
       <Footer />
 
+      <OrderModal />
       <WhatsAppButton />
     </>
   );

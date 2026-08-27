@@ -3,7 +3,18 @@
 import { useState } from "react";
 import { useOrderModal } from "./OrderModalContext";
 
-const offers = [
+type OfferId = "1mois" | "3mois";
+
+type Offer = {
+  id: OfferId;
+  label: string;
+  price: string;
+  oldPrice: string;
+  image: string;
+  popular?: boolean;
+};
+
+const offers: Offer[] = [
   {
     id: "1mois",
     label: "1 mois",
@@ -38,10 +49,12 @@ export default function OrderModal() {
     adresse: "",
   });
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    return null;
+  }
 
   const offer =
-    offers.find((item) => item.id === selectedOffer) || offers[1];
+    offers.find((item) => item.id === selectedOffer) ?? offers[1];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,19 +92,18 @@ export default function OrderModal() {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-navy/70 backdrop-blur-md flex items-center justify-center p-3 md:p-6"
+      className="fixed inset-0 z-50 bg-navy/70 backdrop-blur-sm flex items-center justify-center p-4"
       onMouseDown={(e) => {
-        if (e.target === e.currentTarget) close();
+        if (e.target === e.currentTarget) {
+          close();
+        }
       }}
     >
+      <div className="bg-white w-full max-w-2xl max-h-[92vh] overflow-y-auto shadow-2xl">
 
-      <div className="bg-white w-full max-w-2xl max-h-[94vh] overflow-y-auto shadow-2xl">
-
-        {/* HEADER */}
         <div className="sticky top-0 z-20 bg-white border-b border-gray-100 px-6 md:px-8 py-5 flex items-center justify-between">
-
           <div>
-            <p className="text-[9px] uppercase tracking-[0.25em] text-charcoal-light">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-charcoal-light">
               OKA Nutrition
             </p>
 
@@ -108,14 +120,11 @@ export default function OrderModal() {
           >
             ×
           </button>
-
         </div>
 
         <div className="p-6 md:p-8">
 
-          {/* STEP */}
-          <div className="flex items-center gap-3 mb-8">
-
+          <div className="flex items-center gap-3 mb-7">
             <div className="flex items-center gap-2">
               <span className="w-7 h-7 bg-navy text-white flex items-center justify-center text-[10px]">
                 1
@@ -137,12 +146,9 @@ export default function OrderModal() {
                 Vos coordonnées
               </span>
             </div>
-
           </div>
 
-          {/* OFFERS */}
-          <div className="grid grid-cols-2 gap-3 mb-9">
-
+          <div className="grid grid-cols-2 gap-3 mb-8">
             {offers.map((item) => {
               const selected = selectedOffer === item.id;
 
@@ -151,39 +157,34 @@ export default function OrderModal() {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedOffer(item.id)}
-                  className={`relative text-left border transition-all duration-300 ${
+                  className={`relative text-left border-2 transition-all duration-200 ${
                     selected
-                      ? "border-navy ring-1 ring-navy"
-                      : "border-gray-200 hover:border-gray-400"
+                      ? "border-navy"
+                      : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
-
                   {item.popular && (
-                    <span className="absolute top-0 right-0 z-10 bg-navy text-white px-3 py-1.5 text-[8px] uppercase tracking-wider">
-                      Recommandé
+                    <span className="absolute top-2 left-2 z-10 bg-navy text-white text-[9px] px-2 py-1">
+                      RECOMMANDÉ
                     </span>
                   )}
 
-                  <div className="h-36 md:h-44 bg-[#f3f3f0] flex items-center justify-center">
-
+                  <div className="h-32 sm:h-40 bg-grey-bg flex items-center justify-center p-4">
                     <img
                       src={item.image}
-                      alt={item.label}
-                      className="w-[72%] h-[85%] object-contain"
+                      alt=""
+                      className="w-full h-full object-contain"
                     />
-
                   </div>
 
                   <div className="p-4">
-
                     <div className="flex items-center justify-between">
-
                       <span className="font-heading text-lg text-navy">
                         {item.label}
                       </span>
 
                       <span
-                        className={`w-5 h-5 rounded-full border flex items-center justify-center ${
+                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                           selected
                             ? "border-navy"
                             : "border-gray-300"
@@ -193,11 +194,9 @@ export default function OrderModal() {
                           <span className="w-2.5 h-2.5 rounded-full bg-navy" />
                         )}
                       </span>
-
                     </div>
 
                     <div className="flex items-baseline gap-2 mt-2">
-
                       <span className="font-semibold text-navy">
                         {item.price}
                       </span>
@@ -205,34 +204,25 @@ export default function OrderModal() {
                       <span className="text-[10px] text-charcoal-light line-through">
                         {item.oldPrice}
                       </span>
-
                     </div>
-
                   </div>
-
                 </button>
               );
             })}
-
           </div>
 
-          {/* FORM */}
-          <div className="border-t border-gray-100 pt-8">
-
-            <div className="mb-6">
-              <p className="text-[9px] uppercase tracking-[0.25em] text-charcoal-light mb-2">
+          <div className="border-t border-gray-100 pt-7">
+            <div className="mb-5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal-light mb-2">
                 Livraison
               </p>
 
-              <h3 className="font-heading text-2xl text-navy">
-                Où souhaitez-vous recevoir votre commande ?
+              <h3 className="font-heading text-xl md:text-2xl text-navy">
+                Vos coordonnées
               </h3>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-3"
-            >
+            <form onSubmit={handleSubmit} className="space-y-3">
 
               <input
                 required
@@ -242,18 +232,18 @@ export default function OrderModal() {
                 onChange={(e) =>
                   setForm({ ...form, nom: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-4 text-sm outline-none focus:border-navy transition"
+                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
               />
 
               <input
                 required
                 type="tel"
-                placeholder="Numéro de téléphone"
+                placeholder="Téléphone"
                 value={form.telephone}
                 onChange={(e) =>
                   setForm({ ...form, telephone: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-4 text-sm outline-none focus:border-navy transition"
+                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
               />
 
               <input
@@ -264,7 +254,7 @@ export default function OrderModal() {
                 onChange={(e) =>
                   setForm({ ...form, ville: e.target.value })
                 }
-                className="w-full border border-gray-200 px-4 py-4 text-sm outline-none focus:border-navy transition"
+                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition"
               />
 
               <textarea
@@ -275,60 +265,40 @@ export default function OrderModal() {
                   setForm({ ...form, adresse: e.target.value })
                 }
                 rows={3}
-                className="w-full border border-gray-200 px-4 py-4 text-sm outline-none focus:border-navy transition resize-none"
+                className="w-full border border-gray-200 px-4 py-3.5 text-sm outline-none focus:border-navy transition resize-none"
               />
 
-              {/* SUMMARY */}
-              <div className="bg-grey-bg p-5 mt-5 flex items-center justify-between">
-
+              <div className="bg-grey-bg p-4 mt-5 flex items-center justify-between">
                 <div>
                   <p className="text-[9px] uppercase tracking-[0.2em] text-charcoal-light">
                     Votre sélection
                   </p>
 
-                  <p className="font-heading text-xl text-navy mt-1">
+                  <p className="font-heading text-lg text-navy mt-1">
                     {offer.label}
                   </p>
                 </div>
 
-                <div className="text-right">
-
-                  <p className="font-heading text-2xl text-navy">
-                    {offer.price}
-                  </p>
-
-                  <p className="text-[10px] text-charcoal-light">
-                    Paiement à la livraison
-                  </p>
-
-                </div>
-
+                <p className="font-heading text-xl text-navy">
+                  {offer.price}
+                </p>
               </div>
 
               <button
                 type="submit"
-                className="group w-full bg-navy text-white py-4 mt-2 text-sm font-medium hover:bg-navy-light transition-all duration-300"
+                className="w-full bg-navy text-white py-4 text-sm font-medium hover:bg-navy-light transition-all mt-1"
               >
-                <span className="inline-flex items-center gap-3">
-                  Confirmer ma commande
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
+                Confirmer ma commande
               </button>
 
-              <p className="text-center text-[10px] text-charcoal-light pt-2">
-                Votre commande sera confirmée directement sur WhatsApp.
+              <p className="text-center text-[10px] text-charcoal-light pt-1">
+                Paiement à la livraison · Livraison gratuite
               </p>
 
             </form>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }

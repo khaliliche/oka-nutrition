@@ -3,7 +3,20 @@
 import FadeIn from "./FadeIn";
 import { useOrderModal } from "./OrderModalContext";
 
-const offers = [
+type OfferId = "1mois" | "3mois";
+
+type Offer = {
+  id: OfferId;
+  number: string;
+  label: string;
+  price: string;
+  oldPrice: string;
+  image: string;
+  description: string;
+  popular?: boolean;
+};
+
+const offers: Offer[] = [
   {
     id: "1mois",
     number: "01",
@@ -141,7 +154,6 @@ export default function Offers() {
                     </p>
 
                     <div className="border-t border-gray-100 mt-6 pt-5 space-y-2">
-
                       <p className="text-xs text-charcoal">
                         ✓ Livraison gratuite
                       </p>
@@ -149,7 +161,6 @@ export default function Offers() {
                       <p className="text-xs text-charcoal">
                         ✓ Paiement à la livraison
                       </p>
-
                     </div>
 
                     <button
