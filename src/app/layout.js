@@ -1,7 +1,5 @@
 ﻿import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { OrderModalProvider } from "./components/OrderModalContext";
-import OrderModal from "./components/OrderModal";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -24,10 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`${playfair.variable} ${dmSans.variable} font-body bg-white text-charcoal`}>
-        <OrderModalProvider>
-          {children}
-          <OrderModal />
-        </OrderModalProvider>
+        {children}
       </body>
     </html>
   );
