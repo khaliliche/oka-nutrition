@@ -1,22 +1,17 @@
-﻿import Image from 'next/image';
-
-export default function Reviews() {
+﻿export default function Reviews() {
   const reviews = [
     {
       name: 'Karim B.',
-      avatar: '/images/avatar-1.jpg',
       text: 'Après 2 mois, la chute a nettement diminué. Mes cheveux sont plus épais. Je recommande !',
       rating: 5,
     },
     {
       name: 'Youssef M.',
-      avatar: '/images/avatar-1.jpg',
       text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines.',
       rating: 5,
     },
     {
       name: 'Mehdi S.',
-      avatar: '/images/avatar-1.jpg',
       text: 'J\u2019ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné.',
       rating: 5,
     },
@@ -45,8 +40,8 @@ export default function Reviews() {
               <span className="font-heading text-5xl text-blue-bright/30 leading-none">&ldquo;</span>
               <p className="-mt-4 text-gray-700 italic">{review.text}</p>
               <div className="flex items-center gap-3 mt-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0">
-                  <Image src={review.avatar} alt={review.name} fill className="object-cover" />
+                <div className="w-12 h-12 rounded-full shrink-0 bg-blue-dark text-white flex items-center justify-center font-bold text-sm">
+                  {review.name.charAt(0)}
                 </div>
                 <div>
                   <p className="font-bold text-blue-dark text-sm">{review.name}</p>

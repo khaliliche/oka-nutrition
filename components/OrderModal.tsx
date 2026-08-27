@@ -1,8 +1,8 @@
 ﻿'use client';
 
-import { useState } from 'react';
 import { useOrder } from '@/context/OrderContext';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 type Offer = {
   id: string;
@@ -24,6 +24,13 @@ export default function OrderModal() {
   const { isOpen, selectedOffer, closeModal } = useOrder();
   const [step, setStep] = useState<'offers' | 'form'>('offers');
   const [chosenOffer, setChosenOffer] = useState<Offer | null>(null);
+
+  useEffect(() => {
+    if (isOpen && selectedOffer) {
+      setChosenOffer(selectedOffer);
+      setStep('form');
+    }
+  }, [isOpen, selectedOffer]);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',

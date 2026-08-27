@@ -13,6 +13,7 @@ import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import OrderModal from '@/components/OrderModal';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ProductOffers from '@/components/ProductOffers';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <Hero />
         <Benefits />
+        <ProductOffers />
         <Formula />
         <Offers />
         <Results />

@@ -26,36 +26,55 @@ export default function Hero() {
     <section id="dht-control" className="relative bg-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Image — carrousel automatique */}
-          <div className="order-1 md:order-2 flex-1 relative w-full -mx-4 md:mx-0">
-            <div className="absolute -inset-6 bg-blue-light rounded-[3rem] -z-10 hidden md:block" />
-            <div className="relative w-full h-[420px] sm:h-[520px] md:h-[500px] md:rounded-[2rem] overflow-hidden md:shadow-xl">
-              {heroImages.map((src, idx) => (
-                <Image
-                  key={src}
-                  src={src}
-                  alt="OKA Nutrition DHT Control"
-                  fill
-                  className={`object-cover transition-opacity duration-1000 ease-in-out ${
-                    idx === activeIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  priority={idx === 0}
-                />
-              ))}
+          {/* Image */}
+          <div className="order-1 md:order-2 flex-1 relative w-full -mx-4 md:mx-0 pb-8 md:pb-12">
+            {/* Soft glow instead of flat color block */}
+            <div className="absolute -inset-4 md:-inset-8 bg-blue-bright/20 rounded-[3rem] blur-3xl -z-10" />
 
-              {/* Indicateurs */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {/* Gradient frame */}
+            <div className="relative p-[3px] md:p-1 rounded-[1.75rem] md:rounded-[2rem] bg-gradient-to-br from-blue-bright/60 via-white to-blue-light">
+              <div className="relative w-full h-[420px] sm:h-[520px] md:h-[500px] rounded-[1.6rem] md:rounded-[1.85rem] overflow-hidden shadow-2xl">
                 {heroImages.map((src, idx) => (
-                  <button
+                  <Image
                     key={src}
-                    type="button"
-                    aria-label={`Voir l'image ${idx + 1}`}
-                    onClick={() => setActiveIndex(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === activeIndex ? 'bg-white w-6' : 'bg-white/50'
+                    src={src}
+                    alt="OKA Nutrition DHT Control"
+                    fill
+                    className={`object-cover transition-opacity duration-1000 ease-in-out ${
+                      idx === activeIndex ? 'opacity-100' : 'opacity-0'
                     }`}
+                    priority={idx === 0}
                   />
                 ))}
+
+                {/* Top-right tag */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-blue-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                  100% Naturel
+                </div>
+
+                {/* Indicateurs */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {heroImages.map((src, idx) => (
+                    <button
+                      key={src}
+                      type="button"
+                      aria-label={`Voir l'image ${idx + 1}`}
+                      onClick={() => setActiveIndex(idx)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        idx === activeIndex ? 'bg-white w-6' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Floating trust badge, overlapping the image corner */}
+            <div className="absolute -bottom-2 left-4 md:-bottom-4 md:left-8 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 max-w-[240px]">
+              <span className="text-yellow-400 text-lg leading-none shrink-0">★★★★★</span>
+              <div className="leading-tight">
+                <p className="font-bold text-blue-dark text-sm">4.8/5</p>
+                <p className="text-gray-500 text-[11px]">+5000 clients satisfaits</p>
               </div>
             </div>
           </div>
