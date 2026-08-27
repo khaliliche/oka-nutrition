@@ -1,31 +1,55 @@
-﻿import Image from 'next/image';
+﻿'use client';
+
+import Image from 'next/image';
+import { useOrder } from '@/context/OrderContext';
 
 export default function Hero() {
+  const { openModal } = useOrder();
+
   return (
-    <section id="dht-control" className="relative pt-10 pb-6 bg-white overflow-hidden">
+    <section id="dht-control" className="relative bg-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
-        <span className="block text-sm font-bold tracking-wide text-blue-bright mb-2">
-          FORMULE POUR HOMME
-        </span>
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          {/* Texte */}
+          <div className="flex-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 bg-blue-light text-blue-dark text-xs font-bold px-4 py-2 rounded-full mb-5">
+              <span className="text-yellow-400">★★★★★</span>
+              +5000 hommes satisfaits
+            </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">
-          <span className="text-blue-dark">DES CHEVEUX<br />PLUS FORTS.</span>
-          <br />
-          <span className="text-blue-bright">UNE ROUTINE<br />PLUS CIBLÉE.</span>
-        </h1>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-blue-dark">
+              Des cheveux plus forts.
+              <br />
+              <span className="text-blue-bright">Une routine plus ciblée.</span>
+            </h1>
 
-        <p className="mt-4 text-gray-600 max-w-sm">
-          DHT CONTROL – La formule complète pour lutter contre la chute et renforcer vos cheveux.
-        </p>
+            <p className="mt-6 text-lg text-gray-600 max-w-md mx-auto md:mx-0">
+              DHT Control — la formule complète pour lutter contre la chute, augmenter la densité et renforcer vos cheveux.
+            </p>
 
-        <div className="relative mt-4 min-h-[320px] sm:min-h-[420px] -mx-4">
-          <Image
-            src="/images/hero-model.jpg"
-            alt="OKA Nutrition DHT Control"
-            fill
-            className="object-contain object-bottom"
-            priority
-          />
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <button onClick={() => openModal()} className="btn-primary py-3 px-8 animate-pulse-blue">
+                Commander maintenant
+              </button>
+              <a href="#formule" className="btn-outline py-3 px-8">
+                Voir la formule
+              </a>
+            </div>
+          </div>
+
+          {/* Image — pleine largeur sur mobile, encadrée sur desktop */}
+          <div className="flex-1 relative w-full -mx-4 md:mx-0">
+            <div className="absolute -inset-6 bg-blue-light rounded-[3rem] -z-10 hidden md:block" />
+            <div className="relative w-full h-[420px] sm:h-[520px] md:h-[500px] md:rounded-[2rem] overflow-hidden md:shadow-xl">
+              <Image
+                src="/images/hero-model.jpg"
+                alt="OKA Nutrition DHT Control"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

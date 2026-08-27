@@ -6,13 +6,13 @@ export default function FinalCTA() {
   const { openModal } = useOrder();
 
   return (
-    <section className="py-20 bg-blue-dark text-white text-center">
+    <section className="py-20 md:py-28 bg-blue-dark text-white text-center">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className="font-heading text-3xl md:text-5xl font-bold">
           Cure 3 mois à seulement <span className="text-blue-bright">349 DH</span>
         </h2>
         <p className="mt-4 text-lg text-blue-light max-w-2xl mx-auto">
-          Profitez de l’offre <strong>2 achetés + 1 offert</strong> et retrouvez des cheveux plus forts dès maintenant.
+          Profitez de l&apos;offre <strong>2 achetés + 1 offert</strong> et retrouvez des cheveux plus forts dès maintenant.
         </p>
         <button
           onClick={() => openModal()}

@@ -10,51 +10,49 @@ export default function Reviews() {
     },
     {
       name: 'Youssef M.',
-      avatar: '/images/avatar-2.jpg',
+      avatar: '/images/avatar-1.jpg',
       text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines.',
       rating: 5,
     },
     {
       name: 'Mehdi S.',
-      avatar: '/images/avatar-3.jpg',
-      text: 'J’ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné.',
+      avatar: '/images/avatar-1.jpg',
+      text: 'J\u2019ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné.',
       rating: 5,
     },
   ];
 
   return (
-    <section id="avis" className="py-16 bg-blue-light">
+    <section id="avis" className="py-16 md:py-24 bg-blue-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-dark">
-          Avis clients
-        </h2>
-        <div className="divider-blue mt-4" />
-        <div className="mt-8 text-center">
+        <div className="text-center max-w-xl mx-auto mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
+            Ils ont retrouvé confiance
+          </h2>
+          <div className="divider-blue mt-4" />
+        </div>
+
+        <div className="mt-4 text-center">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-md">
             <span className="text-yellow-400 text-2xl">★★★★★</span>
-            <span className="font-bold text-lg">+5000 hommes satisfaits</span>
+            <span className="font-bold text-lg text-blue-dark">+5000 hommes satisfaits</span>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {reviews.map((review, idx) => (
             <div key={idx} className="card-premium">
-              <div className="flex items-center gap-4">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden">
-                  <Image
-                    src={review.avatar}
-                    alt={review.name}
-                    fill
-                    className="object-cover"
-                  />
+              <span className="font-heading text-5xl text-blue-bright/30 leading-none">&ldquo;</span>
+              <p className="-mt-4 text-gray-700 italic">{review.text}</p>
+              <div className="flex items-center gap-3 mt-6">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0">
+                  <Image src={review.avatar} alt={review.name} fill className="object-cover" />
                 </div>
                 <div>
-                  <p className="font-bold text-blue-dark">{review.name}</p>
-                  <div className="flex text-yellow-400">
-                    {'★'.repeat(review.rating)}
-                  </div>
+                  <p className="font-bold text-blue-dark text-sm">{review.name}</p>
+                  <div className="flex text-yellow-400 text-sm">{'★'.repeat(review.rating)}</div>
                 </div>
               </div>
-              <p className="mt-4 text-gray-700 italic">« {review.text} »</p>
             </div>
           ))}
         </div>

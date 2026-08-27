@@ -6,7 +6,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: 'Comment prendre OKA Nutrition ?',
-      a: 'Prenez 2 gélules par jour avec un grand verre d\'eau, de préférence au cours d\'un repas. Une cure de 3 mois est recommandée pour des résultats optimaux.',
+      a: "Prenez 2 gélules par jour avec un grand verre d'eau, de préférence au cours d'un repas. Une cure de 3 mois est recommandée pour des résultats optimaux.",
     },
     {
       q: 'OKA Nutrition est-il sans danger ?',
@@ -21,24 +21,28 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-white">
+    <section id="faq" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-dark">
-          Questions fréquentes
-        </h2>
-        <div className="divider-blue mt-4" />
-        <div className="mt-12 space-y-4">
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
+            Questions fréquentes
+          </h2>
+          <div className="divider-blue mt-4" />
+        </div>
+
+        <div className="space-y-3">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="border-b border-gray-200 pb-4">
+            <div key={idx} className="card-premium py-4">
               <button
-                className="flex justify-between items-center w-full text-left text-lg font-semibold text-blue-dark hover:text-blue-bright transition"
+                type="button"
+                className="flex justify-between items-center w-full text-left font-semibold text-blue-dark hover:text-blue-bright transition"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
                 {faq.q}
-                <span className="text-2xl">{openIndex === idx ? '−' : '+'}</span>
+                <span className="text-xl ml-4 shrink-0">{openIndex === idx ? '−' : '+'}</span>
               </button>
               {openIndex === idx && (
-                <p className="mt-2 text-gray-600 leading-relaxed">{faq.a}</p>
+                <p className="mt-3 text-gray-600 leading-relaxed">{faq.a}</p>
               )}
             </div>
           ))}
