@@ -99,3 +99,4 @@ section[id] {
   .text-blue-light { color: var(--color-blue-light); }
   .border-blue-light { border-color: var(--color-blue-light); }
 }
+.font-heading { font-family: var(--font-playfair), Georgia, serif; }
