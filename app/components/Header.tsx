@@ -8,28 +8,28 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#10253d] text-white shadow-md">
+    <header className="sticky top-0 z-50 bg-navy text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
         <a href="#" aria-label="OKA Nutrition" className="shrink-0">
           <img
             src="/images/logo.jpg"
             alt="OKA Nutrition"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-12 md:h-14 w-auto object-contain"
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#formula" className="text-sm text-white/80 hover:text-white transition">
+        <nav className="hidden md:flex items-center gap-9">
+          <a href="#formula" className="text-[13px] tracking-wide text-white/75 hover:text-brass-light transition-colors">
             Formule
           </a>
-          <a href="#offers" className="text-sm text-white/80 hover:text-white transition">
+          <a href="#offers" className="text-[13px] tracking-wide text-white/75 hover:text-brass-light transition-colors">
             Offres
           </a>
-          <a href="#reviews" className="text-sm text-white/80 hover:text-white transition">
+          <a href="#reviews" className="text-[13px] tracking-wide text-white/75 hover:text-brass-light transition-colors">
             Avis
           </a>
-          <a href="#faq" className="text-sm text-white/80 hover:text-white transition">
+          <a href="#faq" className="text-[13px] tracking-wide text-white/75 hover:text-brass-light transition-colors">
             FAQ
           </a>
         </nav>
@@ -37,7 +37,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => open("3mois")}
-          className="hidden md:inline-flex bg-white text-[#10253d] px-6 py-3 rounded-full text-sm font-medium hover:bg-[#f3f3f0] transition"
+          className="hidden md:inline-flex bg-brass text-navy px-6 py-3 text-[13px] font-medium tracking-wide hover:bg-brass-light transition-colors"
         >
           Commander
         </button>
@@ -54,7 +54,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#10253d] border-t border-white/10">
+        <div className="md:hidden bg-navy border-t border-white/10">
           <nav className="px-5 py-5 flex flex-col">
             <a href="#formula" onClick={() => setMenuOpen(false)} className="py-4 text-white/85 border-b border-white/10">
               Formule
@@ -75,7 +75,7 @@ export default function Header() {
                 setMenuOpen(false);
                 open("3mois");
               }}
-              className="mt-5 bg-white text-[#10253d] py-4 rounded-full text-sm font-medium"
+              className="mt-5 bg-brass text-navy py-4 text-sm font-medium tracking-wide"
             >
               Commander maintenant
             </button>

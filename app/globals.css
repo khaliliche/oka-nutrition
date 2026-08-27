@@ -1,13 +1,21 @@
 ﻿@import "tailwindcss";
 
+@theme {
+  --color-navy: #0f2036;
+  --color-navy-light: #1c3a5e;
+  --color-cream: #f7f3ec;
+  --color-charcoal: #23282d;
+  --color-charcoal-light: #6b7178;
+  --color-brass: #a9824c;
+  --color-brass-light: #cba874;
+
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-dmsans);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #17202a;
-  --navy: #10253d;
-  --navy-light: #1b3552;
-  --grey-bg: #f4f4f1;
-  --charcoal: #26313b;
-  --charcoal-light: #68727c;
+  --background: #f7f3ec;
+  --foreground: #23282d;
 }
 
 html {
@@ -20,7 +28,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -44,11 +51,10 @@ button {
 }
 
 ::selection {
-  background: var(--navy);
+  background: var(--color-navy);
   color: white;
 }
 
-/* Prevent accidental oversized text / elements */
 h1,
 h2,
 h3,
@@ -56,7 +62,6 @@ p {
   margin-top: 0;
 }
 
-/* Better mobile tap behavior */
 @media (max-width: 640px) {
   html {
     scroll-padding-top: 68px;
