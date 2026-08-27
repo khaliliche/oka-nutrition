@@ -18,10 +18,10 @@ export default function Offers() {
     },
     {
       id: 'offre-2',
-      title: 'Économique',
+      title: 'Cure complète',
       price: 349,
       badge: '⭐ Meilleure valeur',
-      description: '3 flacons – cure 3 mois',
+      description: '3 flacons – 2 achetés + 1 offert !',
       image: '/images/offre-2.jpg',
     },
   ];
@@ -37,7 +37,9 @@ export default function Offers() {
           {offers.map((offer) => (
             <div
               key={offer.id}
-              className="card-premium flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300"
+              className={`card-premium flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 ${
+                offer.id === 'offre-2' ? 'border-2 border-blue-bright' : ''
+              }`}
             >
               <div className="relative w-48 h-48 mb-4">
                 <Image
@@ -52,6 +54,11 @@ export default function Offers() {
               </span>
               <h3 className="text-2xl font-bold text-blue-dark">{offer.title}</h3>
               <p className="text-gray-600">{offer.description}</p>
+              {offer.id === 'offre-2' && (
+                <p className="text-sm text-green-600 font-semibold mt-1">
+                  Économisez 50 DH
+                </p>
+              )}
               <p className="text-3xl font-extrabold text-blue-bright mt-2">
                 {offer.price} DH
               </p>

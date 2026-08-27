@@ -9,10 +9,10 @@ export default function FinalCTA() {
     <section className="py-20 bg-blue-dark text-white text-center">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-5xl font-bold">
-          Prêt à dire adieu à la chute de cheveux ?
+          Cure 3 mois à seulement <span className="text-blue-bright">349 DH</span>
         </h2>
         <p className="mt-4 text-lg text-blue-light max-w-2xl mx-auto">
-          Rejoignez des milliers de clients satisfaits et offrez à vos cheveux le meilleur de la nature.
+          Profitez de l’offre <strong>2 achetés + 1 offert</strong> et retrouvez des cheveux plus forts dès maintenant.
         </p>
         <button
           onClick={() => openModal()}

@@ -7,7 +7,7 @@ export default function Formula() {
         <div className="flex-1">
           <Image
             src="/images/formula.jpg"
-            alt="Formule OKA Nutrition"
+            alt="Formule DHT Control OKA Nutrition"
             width={500}
             height={500}
             className="rounded-3xl shadow-lg object-cover w-full h-auto"
@@ -15,26 +15,24 @@ export default function Formula() {
         </div>
         <div className="flex-1">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-dark">
-            Une formule unique pour vos cheveux
+            DHT Control – la formule ciblée
           </h2>
           <div className="divider-blue mt-4" />
           <p className="mt-6 text-lg text-gray-700">
-            OKA Nutrition associe des actifs naturels puissants : <br />
-            <strong>Biotine</strong>, <strong>Zinc</strong>, <strong>Vitamine E</strong> et
-            <strong> extraits de plantes</strong> pour nourrir le bulbe capillaire et stimuler la pousse.
+            OKA Nutrition DHT Control associe des actifs naturels puissants pour contrer l’action de la DHT, l’hormone responsable de la chute de cheveux chez l’homme.
           </p>
           <ul className="mt-6 space-y-3 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-blue-bright text-xl">✓</span>
-              Réduit la chute de cheveux dès 4 semaines
+              <strong>Freine la chute</strong> – agit sur les récepteurs de la DHT
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-bright text-xl">✓</span>
-              Renforce la fibre capillaire
+              <strong>Augmente la densité</strong> – stimule les follicules capillaires
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-bright text-xl">✓</span>
-              Améliore la brillance et la densité
+              <strong>Renforce les cheveux</strong> – apporte nutriments et vitalité
             </li>
           </ul>
         </div>

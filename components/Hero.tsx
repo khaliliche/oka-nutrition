@@ -7,52 +7,59 @@ export default function Hero() {
   const { openModal } = useOrder();
 
   return (
-    <section className="bg-white pt-14 sm:pt-16 md:pt-20">
-      <div className="md:flex md:flex-row-reverse md:items-stretch">
-        {/* Image produit */}
-        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:w-1/2 md:aspect-auto">
-          <Image
-            src="/images/hero-product.jpg"
-            alt="Homme souriant tenant OKA Nutrition DHT Control"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
-
-        {/* Bloc texte */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left px-6 py-8 sm:px-8 sm:py-10 md:px-14 lg:px-20 bg-blue-light">
-          <div className="flex items-center gap-1.5 mb-3">
-            <span className="text-blue-bright text-base tracking-wide">
-              &#9733;&#9733;&#9733;&#9733;&#9733;
+    <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-blue-light to-white">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-1 text-center md:text-left">
+          <div className="inline-block bg-blue-bright/10 text-blue-bright text-sm font-bold px-4 py-1 rounded-full mb-4">
+            NOUVEAU
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-blue-dark">
+            <span className="text-blue-bright">Formule pour Homme</span>
+            <br />
+            DHT Control
+          </h1>
+          <p className="mt-4 text-lg text-gray-700 max-w-lg mx-auto md:mx-0">
+            La formule complète pour lutter contre la chute, augmenter la densité et renforcer vos cheveux.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 justify-center md:justify-start">
+            <span className="flex items-center gap-1 text-sm font-medium text-green-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              Freine la chute
             </span>
-            <span className="text-[11px] sm:text-xs font-semibold text-blue-dark uppercase tracking-wide">
-              +1 200 clients satisfaits
+            <span className="flex items-center gap-1 text-sm font-medium text-green-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              Augmente la densité
+            </span>
+            <span className="flex items-center gap-1 text-sm font-medium text-green-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+              Renforce les cheveux
             </span>
           </div>
-
-          <h1 className="font-heading italic text-[28px] leading-[1.15] sm:text-4xl md:text-5xl md:leading-tight text-blue-dark max-w-xs sm:max-w-sm">
-            Une chevelure forte commence avec OKA Nutrition.
-          </h1>
-
-          <p className="mt-4 text-sm sm:text-base text-gray-700 max-w-xs sm:max-w-sm">
-            Complexe folliculaire 100% naturel. Abonnez-vous et économisez +
-            15 DH offerts sur votre premier mois*.
-          </p>
-
-          <div className="mt-6 grid grid-cols-2 gap-2.5 w-full max-w-xs sm:max-w-sm">
+          <div className="mt-4 flex items-center gap-2 text-sm text-gray-600 justify-center md:justify-start">
+            <span className="text-yellow-400 text-lg">★★★★★</span>
+            <span className="font-bold">+5000 hommes satisfaits</span>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
             <button
               onClick={() => openModal()}
-              className="border-2 border-blue-dark text-blue-dark font-semibold uppercase text-[11px] sm:text-xs tracking-wide py-3 hover:bg-blue-dark hover:text-white transition"
+              className="btn-primary animate-pulse-blue animate-float"
             >
-              Meilleure vente
+              Commander la cure 3 mois
             </button>
-            <a
-              href="#offres"
-              className="border-2 border-blue-dark text-blue-dark font-semibold uppercase text-[11px] sm:text-xs tracking-wide py-3 text-center hover:bg-blue-dark hover:text-white transition"
-            >
-              Voir l&apos;offre
+            <a href="#offres" className="btn-outline">
+              Voir les offres
             </a>
+          </div>
+        </div>
+        <div className="flex-1 flex justify-center">
+          <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <Image
+              src="/images/hero-product.jpg"
+              alt="OKA Nutrition DHT Control"
+              fill
+              className="object-contain drop-shadow-2xl animate-float"
+              priority
+            />
           </div>
         </div>
       </div>

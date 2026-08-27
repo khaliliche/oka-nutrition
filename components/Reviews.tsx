@@ -3,21 +3,21 @@
 export default function Reviews() {
   const reviews = [
     {
-      name: 'Marie D.',
-      avatar: '/images/avatar-1.jpg',
-      text: 'Après 1 mois de cure, la chute a diminué de 70% ! Mes cheveux sont plus épais. Je recommande vivement.',
-      rating: 5,
-    },
-    {
       name: 'Karim B.',
-      avatar: '/images/avatar-2.jpg',
-      text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines. Livraison rapide.',
+      avatar: '/images/avatar-1.jpg',
+      text: 'Après 2 mois, la chute a nettement diminué. Mes cheveux sont plus épais. Je recommande !',
       rating: 5,
     },
     {
-      name: 'Sophie M.',
+      name: 'Youssef M.',
+      avatar: '/images/avatar-2.jpg',
+      text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines.',
+      rating: 5,
+    },
+    {
+      name: 'Mehdi S.',
       avatar: '/images/avatar-3.jpg',
-      text: 'J\'ai essayé plusieurs produits, OKA Nutrition est le seul qui a vraiment fonctionné. Je suis conquise !',
+      text: 'J’ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné.',
       rating: 5,
     },
   ];
@@ -29,6 +29,12 @@ export default function Reviews() {
           Avis clients
         </h2>
         <div className="divider-blue mt-4" />
+        <div className="mt-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-md">
+            <span className="text-yellow-400 text-2xl">★★★★★</span>
+            <span className="font-bold text-lg">+5000 hommes satisfaits</span>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {reviews.map((review, idx) => (
             <div key={idx} className="card-premium">

@@ -1,24 +1,24 @@
 ﻿export default function Benefits() {
   const benefits = [
     {
-      icon: '🏆',
-      title: 'Qualité Premium',
-      description: 'Ingrédients sélectionnés avec soin pour une efficacité optimale.',
+      icon: '🛡️',
+      title: 'Anti-DHT',
+      description: 'Une formule spécifique pour contrer l’action de la DHT, responsable de la chute.',
     },
     {
-      icon: '🌿',
-      title: '100% Naturel',
-      description: 'Formulé à base d\'extraits de plantes et de nutriments essentiels.',
+      icon: '📈',
+      title: 'Densité augmentée',
+      description: 'Stimule la repousse et augmente la densité capillaire visiblement.',
     },
     {
-      icon: '📊',
+      icon: '💪',
+      title: 'Renforcement',
+      description: 'Les cheveux sont plus forts, plus résistants et moins cassants.',
+    },
+    {
+      icon: '🔬',
       title: 'Efficacité prouvée',
-      description: 'Des résultats cliniquement testés sur la repousse capillaire.',
-    },
-    {
-      icon: '👩‍🔬',
-      title: 'Expertise',
-      description: 'Développé par des experts en nutrition et en santé capillaire.',
+      description: '+5000 hommes ont constaté des résultats dès 4 semaines.',
     },
   ];
 

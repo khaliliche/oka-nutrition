@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   const phoneNumber = '212661972751';
-  const message = 'Bonjour, je souhaite en savoir plus sur OKA Nutrition.';
+  const message = 'Bonjour, je souhaite en savoir plus sur OKA Nutrition DHT Control.';
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

@@ -19,10 +19,10 @@ export default function OrderModal() {
     },
     {
       id: 'offre-2',
-      title: 'Économique',
+      title: 'Cure complète',
       price: 349,
       badge: '⭐ Meilleure valeur',
-      description: '3 flacons – cure 3 mois',
+      description: '3 flacons – 2 achetés + 1 offert',
       image: '/images/offre-2.jpg',
     },
   ];
