@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import { useOrder } from '@/context/OrderContext';
 
-export default function Offers() {
+export default function PricingBand() {
   const { openModal } = useOrder();
 
   return (

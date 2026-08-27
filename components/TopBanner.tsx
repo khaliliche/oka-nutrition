@@ -1,4 +1,4 @@
-﻿export default function PromoBar() {
+export default function TopBanner() {
   return (
     <div className="bg-blue-light text-blue-dark text-xs sm:text-sm font-bold py-2">
       <div className="container mx-auto px-4 flex items-center justify-center gap-2">
