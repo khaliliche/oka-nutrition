@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import { useOrder, type Offer } from '@/context/OrderContext';
 
-const quickBenefits = ['Freine la chute', 'Augmente la densité', 'Renforce les cheveux'];
-
 const packs: (Offer & { isBestValue?: boolean })[] = [
   {
     id: 'offre-2',
@@ -18,22 +16,12 @@ const packs: (Offer & { isBestValue?: boolean })[] = [
   {
     id: 'offre-1',
     title: 'Découverte',
-    price: 175,
+    price: 199,
     badge: '',
     description: '1 flacon — 1 mois',
     image: '/images/offre-1.jpg',
   },
 ];
-
-function QuickBenefitIcon() {
-  return (
-    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-blue-bright/20 flex items-center justify-center shrink-0">
-      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-bright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v6m3-6v10m3-10v14M6 21h12" />
-      </svg>
-    </div>
-  );
-}
 
 export default function Hero() {
   const { openModal } = useOrder();
@@ -41,61 +29,14 @@ export default function Hero() {
   return (
     <section id="dht-control" className="relative bg-blue-light overflow-hidden">
       <div className="container mx-auto px-4 pt-6 sm:pt-12 md:pt-16">
-        <div className="flex flex-row items-center gap-4 sm:gap-10 md:gap-14">
-          {/* Texte */}
-          <div className="w-[42%] sm:w-auto sm:flex-none sm:max-w-[360px] md:max-w-[440px] lg:max-w-[500px] text-left">
-            <p className="text-xs sm:text-sm font-bold text-blue-bright tracking-wide uppercase mb-1">
-              Formule pour homme
-            </p>
-
-            <h1 className="font-heading text-[22px] sm:text-4xl lg:text-[52px] font-bold leading-[1.15] text-blue-dark">
-              Des cheveux
-              <br />
-              plus forts.
-              <br />
-              <span className="text-blue-bright">
-                Une routine
-                <br />
-                plus ciblée.
-              </span>
-            </h1>
-
-            <p className="mt-3 sm:mt-6 text-xs sm:text-lg text-gray-600 max-w-md">
-              DHT Control – La formule complète pour lutter contre la chute et renforcer vos cheveux.
-            </p>
-
-            <div className="mt-5 sm:mt-8 flex flex-col gap-3 sm:gap-4">
-              {quickBenefits.map((label) => (
-                <div key={label} className="flex items-center gap-2 sm:gap-3">
-                  <QuickBenefitIcon />
-                  <span className="text-[11px] sm:text-sm font-bold text-blue-dark uppercase tracking-wide leading-tight">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Image produit — fondu sur les bords pour se fondre dans le fond */}
-          <div className="w-[58%] sm:w-auto sm:flex-1 relative -mr-4 md:mr-0">
-            <div
-              className="relative w-full h-[380px] sm:h-[480px] md:h-[540px] lg:h-[600px]"
-              style={{
-                WebkitMaskImage:
-                  'radial-gradient(ellipse 90% 85% at 62% 45%, black 50%, transparent 100%)',
-                maskImage:
-                  'radial-gradient(ellipse 90% 85% at 62% 45%, black 50%, transparent 100%)',
-              }}
-            >
-              <Image
-                src="/images/hero-model.jpg"
-                alt="OKA Nutrition DHT Control"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
+        <div className="relative w-full max-w-2xl mx-auto aspect-[495/543] rounded-2xl overflow-hidden">
+          <Image
+            src="/images/hero-banner.png"
+            alt="OKA Nutrition DHT Control — Des cheveux plus forts, une routine plus ciblée"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
       </div>
 
