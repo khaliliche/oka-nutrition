@@ -113,7 +113,7 @@ export default function Hero() {
             Choisissez votre cure
           </h2>
 
-          <div className="mt-6 flex sm:grid sm:grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="mt-6 flex sm:grid sm:grid-cols-2 gap-3 sm:gap-8 max-w-3xl mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {packs.map((pack) => (
               <div
                 key={pack.id}
@@ -122,33 +122,33 @@ export default function Hero() {
                 }`}
               >
                 {pack.badge && (
-                  <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-blue-dark text-white text-[9px] sm:text-xs font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-full z-10">
+                  <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-blue-dark text-white text-[9px] sm:text-sm font-bold px-2 py-1 sm:px-3.5 sm:py-2 rounded-full z-10">
                     {pack.badge}
                   </span>
                 )}
 
-                <div className="relative h-32 sm:h-44 bg-blue-light flex items-center justify-center p-3 sm:p-6">
+                <div className="relative h-32 sm:h-56 bg-blue-light flex items-center justify-center p-3 sm:p-8">
                   <Image
                     src={pack.image}
                     alt={pack.title}
                     fill
-                    className="object-contain p-4 sm:p-8"
+                    className="object-contain p-4 sm:p-10"
                   />
                 </div>
 
-                <div className="p-3 sm:p-5 text-center">
-                  <h3 className="font-heading text-sm sm:text-lg font-bold text-blue-dark">
+                <div className="p-3 sm:p-7 text-center">
+                  <h3 className="font-heading text-sm sm:text-2xl font-bold text-blue-dark">
                     {pack.title}
                   </h3>
-                  <p className="mt-0.5 text-xs sm:text-sm text-gray-600 leading-tight">
+                  <p className="mt-0.5 text-xs sm:text-base text-gray-600 leading-tight">
                     {pack.description}
                   </p>
-                  <p className="mt-2 font-heading text-xl sm:text-2xl font-extrabold text-blue-bright">
+                  <p className="mt-2 sm:mt-3 font-heading text-xl sm:text-3xl font-extrabold text-blue-bright">
                     {pack.price} DH
                   </p>
                   <button
                     onClick={() => openModal(pack)}
-                    className="btn-primary w-full mt-3 py-2 sm:py-3 text-xs sm:text-sm"
+                    className="btn-primary w-full mt-3 sm:mt-5 py-2 sm:py-4 text-xs sm:text-base"
                   >
                     Commander
                   </button>

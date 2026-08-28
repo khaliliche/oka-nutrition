@@ -56,7 +56,7 @@ export default function Offers() {
           2 mois achetés + 1 mois offert
         </div>
 
-        <div className="relative mx-auto mt-6 w-32 sm:w-44" style={{ aspectRatio: 441 / 350 }}>
+        <div className="relative mx-auto mt-6 w-44 sm:w-60" style={{ aspectRatio: 441 / 350 }}>
           <Image
             src="/images/offre-2.jpg"
             alt="Pack 3 mois OKA Nutrition DHT Control"
@@ -79,10 +79,10 @@ export default function Offers() {
 
         {/* Images visibles sur mobile/tablette, empilées sous le contenu */}
         <div className="lg:hidden flex justify-center items-center gap-2 mt-12">
-          <div className="relative w-32 sm:w-40 aspect-[407/497] rounded-2xl overflow-hidden shadow-2xl bg-white -rotate-6 ring-4 ring-white/10 z-10">
+          <div className="relative w-36 sm:w-44 aspect-[407/497] rounded-2xl overflow-hidden shadow-2xl bg-white -rotate-6 ring-4 ring-white/10 z-10">
             <Image src="/images/product-main.jpg" alt="OKA Nutrition DHT Control" fill className="object-contain" />
           </div>
-          <div className="relative w-32 sm:w-40 aspect-[441/350] rounded-2xl overflow-hidden shadow-2xl bg-white rotate-6 -ml-4 ring-4 ring-white/10">
+          <div className="relative w-36 sm:w-44 aspect-[441/350] rounded-2xl overflow-hidden shadow-2xl bg-white rotate-6 -ml-4 ring-4 ring-white/10">
             <Image src="/images/offre-2.jpg" alt="Cure OKA Nutrition 3 mois" fill className="object-contain" />
           </div>
         </div>

@@ -2,10 +2,10 @@
 
 export default function Results() {
   const stats = [
-    { label: 'Clients satisfaits', value: '10 000+' },
+    { label: 'Clients satisfaits', value: '250+' },
     { label: 'Efficacité constatée', value: '95%' },
     { label: 'Livraison en 48h', value: '100%' },
-    { label: 'Retour clients positifs', value: '4.8/5' },
+    { label: 'Retour clients positifs', value: '4.7/5' },
   ];
 
   return (
