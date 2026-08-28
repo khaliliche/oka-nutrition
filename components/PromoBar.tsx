@@ -1,12 +1,13 @@
 ﻿export default function PromoBar() {
   return (
-    <div className="bg-blue-dark text-white text-xs sm:text-sm font-semibold py-2.5">
-      <div className="container mx-auto px-4 flex items-center justify-center gap-2 tracking-wide">
-        <svg className="w-4 h-4 text-blue-bright" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M5 8h10v9a1 1 0 01-1 1H6a1 1 0 01-1-1V8z" />
-          <path d="M3 5a2 2 0 012-2h1.17a2.5 2.5 0 014.66 0h1.34a2.5 2.5 0 014.66 0H18a2 2 0 012 2v2H3V5z" />
-        </svg>
-        <span>CURE 3 MOIS · 2 ACHETÉS + 1 OFFERT</span>
+    <div className="bg-blue-light text-blue-dark text-[11px] sm:text-sm font-bold py-2.5">
+      <div className="container mx-auto px-4 flex items-center justify-center gap-2 sm:gap-3 tracking-wide">
+        <span className="hidden xs:block flex-1 max-w-[36px] sm:max-w-[64px] border-t border-dashed border-blue-dark/40" />
+        <span className="flex items-center gap-1.5 whitespace-nowrap">
+          <span aria-hidden="true">🎁</span>
+          CURE 3 MOIS · 2 ACHETÉS + 1 OFFERT
+        </span>
+        <span className="hidden xs:block flex-1 max-w-[36px] sm:max-w-[64px] border-t border-dashed border-blue-dark/40" />
       </div>
     </div>
   );

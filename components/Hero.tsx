@@ -1,14 +1,7 @@
 ﻿'use client';
 
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useOrder } from '@/context/OrderContext';
-
-const heroImages = [
-  '/images/hero-model.jpg',
-  '/images/icon-benefit-1.jpg',
-  '/images/product-main.jpg',
-];
 
 const quickBenefits = ['Freine la chute', 'Augmente la densité', 'Renforce les cheveux'];
 
@@ -24,34 +17,31 @@ function QuickBenefitIcon() {
 
 export default function Hero() {
   const { openModal } = useOrder();
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section id="dht-control" className="relative bg-white overflow-hidden">
-      <div className="container mx-auto px-4 pt-8 sm:pt-12 md:pt-16">
-        <div className="flex flex-row items-start gap-4 sm:gap-8 md:gap-16">
+      <div className="container mx-auto px-4 pt-6 sm:pt-12 md:pt-16">
+        <div className="flex flex-row items-center gap-4 sm:gap-10 md:gap-14">
           {/* Texte */}
-          <div className="flex-1 max-w-[52%] sm:max-w-none text-left">
+          <div className="w-1/2 sm:w-auto sm:flex-none sm:max-w-[360px] md:max-w-[440px] lg:max-w-[500px] text-left">
             <p className="text-xs sm:text-sm font-bold text-blue-bright tracking-wide uppercase mb-1">
               Formule pour homme
             </p>
 
-            <h1 className="font-heading text-2xl sm:text-4xl lg:text-6xl font-bold leading-[1.1] text-blue-dark">
-              Des cheveux plus forts.
+            <h1 className="font-heading text-[22px] sm:text-4xl lg:text-[52px] font-bold leading-[1.15] text-blue-dark">
+              Des cheveux
               <br />
-              <span className="text-blue-bright">Une routine plus ciblée.</span>
+              plus forts.
+              <br />
+              <span className="text-blue-bright">
+                Une routine
+                <br />
+                plus ciblée.
+              </span>
             </h1>
 
             <p className="mt-3 sm:mt-6 text-xs sm:text-lg text-gray-600 max-w-md">
-              DHT Control — la formule complète pour lutter contre la chute et renforcer vos cheveux.
+              DHT Control – La formule complète pour lutter contre la chute et renforcer vos cheveux.
             </p>
 
             <div className="mt-5 sm:mt-8 flex flex-col gap-3 sm:gap-4">
@@ -66,21 +56,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Image — carrousel automatique, fondue dans le fond */}
-          <div className="flex-1 max-w-[48%] sm:max-w-none relative -mr-4 md:mr-0">
-            <div className="relative w-full h-[320px] sm:h-[480px] md:h-[560px] hero-image-blend">
-              {heroImages.map((src, idx) => (
-                <Image
-                  key={src}
-                  src={src}
-                  alt="OKA Nutrition DHT Control"
-                  fill
-                  className={`object-cover transition-opacity duration-1000 ease-in-out ${
-                    idx === activeIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  priority={idx === 0}
-                />
-              ))}
+          {/* Image produit — photo unique, sans carrousel */}
+          <div className="w-1/2 sm:w-auto sm:flex-1 relative -mr-4 md:mr-0">
+            <div className="relative w-full h-[320px] sm:h-[440px] md:h-[500px] lg:h-[560px]">
+              <Image
+                src="/images/hero-model.jpg"
+                alt="OKA Nutrition DHT Control"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -99,6 +84,15 @@ export default function Hero() {
             <br />
             <span className="text-blue-bright">349 DH</span>
           </h2>
+
+          <div className="relative mx-auto mt-5 w-32 h-40 sm:w-40 sm:h-52">
+            <Image
+              src="/images/offre-1.jpg"
+              alt="Pack OKA Nutrition DHT Control"
+              fill
+              className="object-contain drop-shadow-xl"
+            />
+          </div>
 
           <div className="mt-5 inline-flex items-center gap-2 bg-blue-bright text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
