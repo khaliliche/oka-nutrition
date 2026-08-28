@@ -28,12 +28,12 @@ export default function Hero() {
 
   return (
     <section id="dht-control" className="relative bg-blue-light overflow-hidden">
-      <div className="relative w-full aspect-[495/543] bg-blue-light">
+      <div className="relative w-full aspect-[530/500] bg-blue-light">
         <Image
           src="/images/hero-banner.png"
           alt="OKA Nutrition DHT Control — Des cheveux plus forts, une routine plus ciblée"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
