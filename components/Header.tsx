@@ -19,10 +19,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <div style={{ backgroundColor: '#0E1C4D' }}>
-        <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="container mx-auto px-4 md:max-w-6xl h-14 flex items-center justify-between">
           <button
             type="button"
-            className="p-1"
+            className="p-1 md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
           >
@@ -41,7 +41,7 @@ export default function Header() {
             </svg>
           </button>
 
-          <Link href="/" className="mx-auto">
+          <Link href="/" className="mx-auto md:mx-0">
             <Image
               src="/images/logo-mark.png"
               alt="OKA Nutrition"
@@ -51,6 +51,20 @@ export default function Header() {
               priority
             />
           </Link>
+
+          <nav className="hidden md:flex items-center gap-8 mx-auto">
+            {tabs.map((tab, idx) => (
+              <a
+                key={tab.href}
+                href={tab.href}
+                className={`text-sm whitespace-nowrap transition hover:text-white ${
+                  idx === 0 ? 'font-semibold text-white' : 'font-medium text-white/70'
+                }`}
+              >
+                {tab.label}
+              </a>
+            ))}
+          </nav>
 
           <div className="flex items-center gap-3">
             <button type="button" aria-label="Compte" className="p-1">
@@ -67,7 +81,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <nav className="px-4 pb-4 flex flex-col space-y-3 border-t border-white/10">
+          <nav className="px-4 pb-4 flex flex-col space-y-3 border-t border-white/10 md:hidden">
             {tabs.map((tab) => (
               <a
                 key={tab.href}
@@ -93,7 +107,7 @@ export default function Header() {
         )}
       </div>
 
-      <nav className="flex items-center justify-between bg-white border-b border-gray-100 py-3 px-4 sm:px-8">
+      <nav className="flex items-center justify-between bg-white border-b border-gray-100 py-3 px-4 sm:px-8 md:hidden">
         {tabs.map((tab, idx) => (
           <a
             key={tab.href}
