@@ -26,15 +26,13 @@ export default function Benefits() {
           <div className="divider-blue mt-4" />
         </div>
 
-        <div className="flex sm:grid sm:grid-cols-3 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="max-w-4xl mx-auto flex sm:grid sm:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {benefits.map((b) => (
             <div
               key={b.label}
-              className="card-premium text-center flex flex-col items-center shrink-0 w-[85%] sm:w-auto snap-center"
+              className="relative aspect-square rounded-xl overflow-hidden shrink-0 w-full sm:w-auto snap-center"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-blue-light">
-                <Image src={b.image} alt={b.label} fill className="object-cover" />
-              </div>
+              <Image src={b.image} alt={b.label} fill className="object-cover" />
             </div>
           ))}
         </div>
