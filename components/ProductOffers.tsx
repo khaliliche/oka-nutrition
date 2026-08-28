@@ -6,18 +6,18 @@ import { useOrder, type Offer } from '@/context/OrderContext';
 const offers: Offer[] = [
   {
     id: 'offre-2',
-    title: 'Cure complète',
+    title: 'Cure recommandée',
     price: 349,
-    badge: '⭐ Meilleure valeur — 1 mois offert',
-    description: '3 flacons — 2 achetés + 1 offert',
+    badge: '⭐ Meilleure valeur  1 mois offert',
+    description: '3 flacons  2 achetés + 1 offert',
     image: '/images/offre-2.jpg',
   },
   {
     id: 'offre-1',
-    title: 'Découverte',
+    title: 'Cure 1 mois',
     price: 175,
     badge: '🌟 Populaire',
-    description: '1 flacon — cure 1 mois',
+    description: '1 flacon cure 1 mois',
     image: '/images/offre-1.jpg',
   },
 ];

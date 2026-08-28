@@ -6,17 +6,17 @@ import { useOrder, type Offer } from '@/context/OrderContext';
 const packs: (Offer & { isBestValue?: boolean })[] = [
   {
     id: 'offre-2',
-    title: 'Cure complète',
+    title: 'Cure recommandée',
     price: 349,
     badge: '1 mois offert',
-    description: '3 flacons — 2+1',
+    description: '3 flacons 2+1',
     image: '/images/offre-2.jpg',
     isBestValue: true,
   },
   {
     id: 'offre-1',
-    title: 'Découverte',
-    price: 199,
+    title: 'Cure 1 mois',
+    price: 175,
     badge: '',
     description: '1 flacon — 1 mois',
     image: '/images/offre-1.jpg',
