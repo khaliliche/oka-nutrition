@@ -3,21 +3,15 @@
 const benefits = [
   {
     label: 'Freine la chute',
-    desc: 'Agit sur les récepteurs responsables de la chute de cheveux.',
     image: '/images/icon-benefit-1.jpg',
-    ratio: 642 / 692,
   },
   {
     label: 'Augmente la densité',
-    desc: 'Stimule les follicules capillaires pour une chevelure plus fournie.',
     image: '/images/icon-benefit-2.jpg',
-    ratio: 575 / 646,
   },
   {
     label: 'Renforce les cheveux',
-    desc: 'Apporte les nutriments essentiels à la vitalité du cheveu.',
     image: '/images/icon-benefit-3.jpg',
-    ratio: 687 / 652,
   },
 ];
 
@@ -38,14 +32,9 @@ export default function Benefits() {
               key={b.label}
               className="card-premium text-center flex flex-col items-center shrink-0 w-[85%] sm:w-auto snap-center"
             >
-              <div
-                className="relative w-full rounded-xl overflow-hidden bg-blue-light"
-                style={{ aspectRatio: b.ratio }}
-              >
-                <Image src={b.image} alt={b.label} fill className="object-contain" />
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-blue-light">
+                <Image src={b.image} alt={b.label} fill className="object-cover" />
               </div>
-              <h3 className="mt-4 font-bold text-blue-dark">{b.label}</h3>
-              <p className="mt-2 text-sm text-gray-600">{b.desc}</p>
             </div>
           ))}
         </div>
