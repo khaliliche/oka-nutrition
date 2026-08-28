@@ -28,18 +28,18 @@ export default function Hero() {
 
   return (
     <section id="dht-control" className="relative bg-blue-light overflow-hidden">
-      <div className="relative w-full max-w-2xl mx-auto aspect-[495/543] bg-blue-light">
+      <div className="relative w-full aspect-[495/543] bg-blue-light">
         <Image
           src="/images/hero-banner.png"
           alt="OKA Nutrition DHT Control — Des cheveux plus forts, une routine plus ciblée"
           fill
-          className="object-contain"
+          className="object-cover"
           priority
         />
       </div>
 
       {/* Bandeau offre — 2 packs côte à côte, chacun avec prix + CTA */}
-      <div className="mt-6 sm:mt-10 bg-blue-light py-8 sm:py-12">
+      <div className="bg-blue-light py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 text-blue-dark text-xs sm:text-sm font-bold">
