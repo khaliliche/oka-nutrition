@@ -35,7 +35,7 @@ export default function Offers() {
       <div className="container mx-auto px-4 relative">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-xs font-bold px-4 py-2 rounded-full mb-6 ring-1 ring-white/10">
           <span className="text-yellow-400">★★★★★</span>
-          + de 5000 hommes satisfaits
+          + de 276 hommes satisfaits
         </div>
 
         <p className="text-blue-bright text-xs sm:text-sm font-bold uppercase tracking-widest mb-2">
@@ -56,7 +56,16 @@ export default function Offers() {
           2 mois achetés + 1 mois offert
         </div>
 
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="relative mx-auto mt-6 w-32 sm:w-44" style={{ aspectRatio: 441 / 350 }}>
+          <Image
+            src="/images/offre-2.jpg"
+            alt="Pack 3 mois OKA Nutrition DHT Control"
+            fill
+            className="object-contain drop-shadow-2xl"
+          />
+        </div>
+
+        <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={() => openModal()}
             className="btn-primary py-3 px-8 bg-white text-blue-dark hover:bg-blue-light animate-pulse-blue"

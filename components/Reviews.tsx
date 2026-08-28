@@ -30,7 +30,7 @@
         <div className="mt-4 text-center">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-md">
             <span className="text-yellow-400 text-2xl">★★★★★</span>
-            <span className="font-bold text-lg text-blue-dark">+5000 hommes satisfaits</span>
+            <span className="font-bold text-lg text-blue-dark">+276 hommes satisfaits</span>
           </div>
         </div>
 

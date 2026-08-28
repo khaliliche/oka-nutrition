@@ -7,14 +7,6 @@ const quickBenefits = ['Freine la chute', 'Augmente la densité', 'Renforce les 
 
 const packs: (Offer & { isBestValue?: boolean })[] = [
   {
-    id: 'offre-1',
-    title: 'Découverte',
-    price: 199,
-    badge: '',
-    description: '1 flacon — 1 mois',
-    image: '/images/offre-1.jpg',
-  },
-  {
     id: 'offre-2',
     title: 'Cure complète',
     price: 349,
@@ -22,6 +14,14 @@ const packs: (Offer & { isBestValue?: boolean })[] = [
     description: '3 flacons — 2+1',
     image: '/images/offre-2.jpg',
     isBestValue: true,
+  },
+  {
+    id: 'offre-1',
+    title: 'Découverte',
+    price: 199,
+    badge: '',
+    description: '1 flacon — 1 mois',
+    image: '/images/offre-1.jpg',
   },
 ];
 
@@ -39,11 +39,11 @@ export default function Hero() {
   const { openModal } = useOrder();
 
   return (
-    <section id="dht-control" className="relative bg-white overflow-hidden">
+    <section id="dht-control" className="relative bg-blue-light overflow-hidden">
       <div className="container mx-auto px-4 pt-6 sm:pt-12 md:pt-16">
         <div className="flex flex-row items-center gap-4 sm:gap-10 md:gap-14">
           {/* Texte */}
-          <div className="w-1/2 sm:w-auto sm:flex-none sm:max-w-[360px] md:max-w-[440px] lg:max-w-[500px] text-left">
+          <div className="w-[42%] sm:w-auto sm:flex-none sm:max-w-[360px] md:max-w-[440px] lg:max-w-[500px] text-left">
             <p className="text-xs sm:text-sm font-bold text-blue-bright tracking-wide uppercase mb-1">
               Formule pour homme
             </p>
@@ -76,9 +76,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Image produit — photo unique, sans carrousel */}
-          <div className="w-1/2 sm:w-auto sm:flex-1 relative -mr-4 md:mr-0">
-            <div className="relative w-full h-[320px] sm:h-[440px] md:h-[500px] lg:h-[560px]">
+          {/* Image produit — fondu sur les bords pour se fondre dans le fond */}
+          <div className="w-[58%] sm:w-auto sm:flex-1 relative -mr-4 md:mr-0">
+            <div
+              className="relative w-full h-[380px] sm:h-[480px] md:h-[540px] lg:h-[600px]"
+              style={{
+                WebkitMaskImage:
+                  'radial-gradient(ellipse 90% 85% at 62% 45%, black 50%, transparent 100%)',
+                maskImage:
+                  'radial-gradient(ellipse 90% 85% at 62% 45%, black 50%, transparent 100%)',
+              }}
+            >
               <Image
                 src="/images/hero-model.jpg"
                 alt="OKA Nutrition DHT Control"
@@ -97,7 +105,7 @@ export default function Hero() {
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 text-blue-dark text-xs sm:text-sm font-bold">
               <span className="text-yellow-400 tracking-tight">★★★★★</span>
-              + de 5000 hommes satisfaits
+              + de 276 hommes satisfaits
             </div>
           </div>
 
@@ -105,11 +113,11 @@ export default function Hero() {
             Choisissez votre cure
           </h2>
 
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto">
+          <div className="mt-6 flex sm:grid sm:grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {packs.map((pack) => (
               <div
                 key={pack.id}
-                className={`relative bg-white rounded-2xl sm:rounded-[1.75rem] shadow-lg overflow-hidden border-2 ${
+                className={`relative bg-white rounded-2xl sm:rounded-[1.75rem] shadow-lg overflow-hidden border-2 shrink-0 w-[70%] sm:w-auto snap-center ${
                   pack.isBestValue ? 'border-blue-bright' : 'border-transparent'
                 }`}
               >
@@ -119,7 +127,7 @@ export default function Hero() {
                   </span>
                 )}
 
-                <div className="relative h-28 sm:h-44 bg-blue-light flex items-center justify-center p-3 sm:p-6">
+                <div className="relative h-32 sm:h-44 bg-blue-light flex items-center justify-center p-3 sm:p-6">
                   <Image
                     src={pack.image}
                     alt={pack.title}
@@ -129,24 +137,36 @@ export default function Hero() {
                 </div>
 
                 <div className="p-3 sm:p-5 text-center">
-                  <h3 className="font-heading text-xs sm:text-lg font-bold text-blue-dark">
+                  <h3 className="font-heading text-sm sm:text-lg font-bold text-blue-dark">
                     {pack.title}
                   </h3>
-                  <p className="mt-0.5 text-[10px] sm:text-sm text-gray-600 leading-tight">
+                  <p className="mt-0.5 text-xs sm:text-sm text-gray-600 leading-tight">
                     {pack.description}
                   </p>
-                  <p className="mt-2 font-heading text-lg sm:text-2xl font-extrabold text-blue-bright">
+                  <p className="mt-2 font-heading text-xl sm:text-2xl font-extrabold text-blue-bright">
                     {pack.price} DH
                   </p>
                   <button
                     onClick={() => openModal(pack)}
-                    className="btn-primary w-full mt-3 py-2 sm:py-3 text-[11px] sm:text-sm"
+                    className="btn-primary w-full mt-3 py-2 sm:py-3 text-xs sm:text-sm"
                   >
                     Commander
                   </button>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex sm:hidden items-center justify-center gap-1.5 mt-4">
+            {packs.map((pack) => (
+              <span key={pack.id} className="w-1.5 h-1.5 rounded-full bg-blue-bright/30" />
+            ))}
+          </div>
+
+          <div className="mt-6 flex justify-center">
+            <a href="#formule" className="btn-outline py-3 px-8">
+              Voir la formule
+            </a>
           </div>
         </div>
       </div>
