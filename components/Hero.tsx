@@ -74,22 +74,6 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-
-            <div className="mt-5 sm:mt-8 bg-white rounded-xl sm:rounded-2xl border border-blue-bright/20 shadow-sm p-3 sm:p-5">
-              <p className="text-[11px] sm:text-sm text-blue-dark leading-snug">
-                Une boîte pour une cure d&apos;un mois à seulement{' '}
-                <span className="font-extrabold text-blue-bright">175 DH</span>{' '}
-                <span className="line-through text-gray-400">199 DH</span>
-              </p>
-              <p className="mt-2 text-[11px] sm:text-sm text-blue-dark leading-snug">
-                Cure complète de 3 mois ? Profitez du pack à seulement{' '}
-                <span className="font-extrabold text-blue-bright">349 DH</span>
-              </p>
-              <div className="mt-3 pt-3 border-t border-blue-bright/10 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-blue-dark">
-                <span aria-hidden="true">🇲🇦</span>
-                Livraison gratuite partout au Maroc — Paiement à la réception
-              </div>
-            </div>
           </div>
 
           {/* Image produit — fondu sur les bords pour se fondre dans le fond */}
