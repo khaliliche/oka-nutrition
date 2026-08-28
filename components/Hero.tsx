@@ -127,16 +127,16 @@ export default function Hero() {
                   </span>
                 )}
 
-                <div className="relative h-32 sm:h-56 bg-blue-light flex items-center justify-center p-3 sm:p-8">
+                <div className="relative aspect-[4/5] bg-blue-light">
                   <Image
                     src={pack.image}
                     alt={pack.title}
                     fill
-                    className="object-contain p-4 sm:p-10"
+                    className="object-contain"
                   />
                 </div>
 
-                <div className="p-3 sm:p-7 text-center">
+                <div className="p-4 sm:p-8 text-center">
                   <h3 className="font-heading text-sm sm:text-2xl font-bold text-blue-dark">
                     {pack.title}
                   </h3>

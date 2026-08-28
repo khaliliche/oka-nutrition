@@ -45,12 +45,12 @@ export default function ProductOffers() {
                   isBestValue ? 'border-blue-bright' : 'border-transparent'
                 }`}
               >
-                <div className="relative h-56 md:h-64 bg-blue-light flex items-center justify-center p-6">
+                <div className="relative h-64 md:h-72 bg-blue-light">
                   <Image
                     src={offer.image}
                     alt={offer.title}
                     fill
-                    className="object-contain p-8"
+                    className="object-contain p-2"
                   />
                   <span className="absolute top-4 left-4 bg-blue-dark text-white text-xs font-bold px-3 py-1.5 rounded-full">
                     {offer.badge}
