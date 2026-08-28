@@ -1,9 +1,29 @@
 ﻿'use client';
 
 import Image from 'next/image';
-import { useOrder } from '@/context/OrderContext';
+import { useOrder, type Offer } from '@/context/OrderContext';
 
 const quickBenefits = ['Freine la chute', 'Augmente la densité', 'Renforce les cheveux'];
+
+const packs: (Offer & { isBestValue?: boolean })[] = [
+  {
+    id: 'offre-1',
+    title: 'Découverte',
+    price: 199,
+    badge: '',
+    description: '1 flacon — 1 mois',
+    image: '/images/offre-1.jpg',
+  },
+  {
+    id: 'offre-2',
+    title: 'Cure complète',
+    price: 349,
+    badge: '1 mois offert',
+    description: '3 flacons — 2+1',
+    image: '/images/offre-2.jpg',
+    isBestValue: true,
+  },
+];
 
 function QuickBenefitIcon() {
   return (
@@ -71,44 +91,62 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bandeau offre — étoiles, prix, avantage, CTA */}
+      {/* Bandeau offre — 2 packs côte à côte, chacun avec prix + CTA */}
       <div className="mt-6 sm:mt-10 bg-blue-light py-8 sm:py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 text-blue-dark text-xs sm:text-sm font-bold">
-            <span className="text-yellow-400 tracking-tight">★★★★★</span>
-            + de 5000 hommes satisfaits
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 text-blue-dark text-xs sm:text-sm font-bold">
+              <span className="text-yellow-400 tracking-tight">★★★★★</span>
+              + de 5000 hommes satisfaits
+            </div>
           </div>
 
-          <h2 className="mt-3 font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-blue-dark">
-            Cure de 3 mois à seulement
-            <br />
-            <span className="text-blue-bright">349 DH</span>
+          <h2 className="mt-3 text-center font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-blue-dark">
+            Choisissez votre cure
           </h2>
 
-          <div className="relative mx-auto mt-5 w-32 h-40 sm:w-40 sm:h-52">
-            <Image
-              src="/images/offre-1.jpg"
-              alt="Pack OKA Nutrition DHT Control"
-              fill
-              className="object-contain drop-shadow-xl"
-            />
-          </div>
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto">
+            {packs.map((pack) => (
+              <div
+                key={pack.id}
+                className={`relative bg-white rounded-2xl sm:rounded-[1.75rem] shadow-lg overflow-hidden border-2 ${
+                  pack.isBestValue ? 'border-blue-bright' : 'border-transparent'
+                }`}
+              >
+                {pack.badge && (
+                  <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-blue-dark text-white text-[9px] sm:text-xs font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-full z-10">
+                    {pack.badge}
+                  </span>
+                )}
 
-          <div className="mt-5 inline-flex items-center gap-2 bg-blue-bright text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-full">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5 8h10v9a1 1 0 01-1 1H6a1 1 0 01-1-1V8z" />
-              <path d="M3 5a2 2 0 012-2h1.17a2.5 2.5 0 014.66 0h1.34a2.5 2.5 0 014.66 0H18a2 2 0 012 2v2H3V5z" />
-            </svg>
-            2 mois achetés + 1 mois offert
-          </div>
+                <div className="relative h-28 sm:h-44 bg-blue-light flex items-center justify-center p-3 sm:p-6">
+                  <Image
+                    src={pack.image}
+                    alt={pack.title}
+                    fill
+                    className="object-contain p-4 sm:p-8"
+                  />
+                </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto">
-            <button onClick={() => openModal()} className="btn-primary py-3 px-8 animate-pulse-blue">
-              Commander maintenant
-            </button>
-            <a href="#formule" className="btn-outline py-3 px-8">
-              Voir la formule
-            </a>
+                <div className="p-3 sm:p-5 text-center">
+                  <h3 className="font-heading text-xs sm:text-lg font-bold text-blue-dark">
+                    {pack.title}
+                  </h3>
+                  <p className="mt-0.5 text-[10px] sm:text-sm text-gray-600 leading-tight">
+                    {pack.description}
+                  </p>
+                  <p className="mt-2 font-heading text-lg sm:text-2xl font-extrabold text-blue-bright">
+                    {pack.price} DH
+                  </p>
+                  <button
+                    onClick={() => openModal(pack)}
+                    className="btn-primary w-full mt-3 py-2 sm:py-3 text-[11px] sm:text-sm"
+                  >
+                    Commander
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

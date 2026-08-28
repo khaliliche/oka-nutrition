@@ -35,13 +35,13 @@ export default function ProductOffers() {
           <div className="divider-blue mt-4" />
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div className="flex sm:grid sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {offers.map((offer) => {
             const isBestValue = offer.id === 'offre-2';
             return (
               <div
                 key={offer.id}
-                className={`relative bg-white rounded-[1.75rem] shadow-xl overflow-hidden border-2 transition-all hover:shadow-2xl ${
+                className={`relative bg-white rounded-[1.75rem] shadow-xl overflow-hidden border-2 transition-all hover:shadow-2xl shrink-0 w-[85%] sm:w-auto snap-center ${
                   isBestValue ? 'border-blue-bright' : 'border-transparent'
                 }`}
               >
@@ -77,6 +77,12 @@ export default function ProductOffers() {
               </div>
             );
           })}
+        </div>
+
+        <div className="flex sm:hidden items-center justify-center gap-1.5 mt-4">
+          {offers.map((offer) => (
+            <span key={offer.id} className="w-1.5 h-1.5 rounded-full bg-blue-bright/30" />
+          ))}
         </div>
       </div>
     </section>
