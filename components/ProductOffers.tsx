@@ -5,20 +5,20 @@ import { useOrder, type Offer } from '@/context/OrderContext';
 
 const offers: Offer[] = [
   {
-    id: 'offre-1',
-    title: 'Découverte',
-    price: 199,
-    badge: '🌟 Populaire',
-    description: '1 flacon — cure 1 mois',
-    image: '/images/offre-1.jpg',
-  },
-  {
     id: 'offre-2',
     title: 'Cure complète',
     price: 349,
     badge: '⭐ Meilleure valeur — 1 mois offert',
     description: '3 flacons — 2 achetés + 1 offert',
     image: '/images/offre-2.jpg',
+  },
+  {
+    id: 'offre-1',
+    title: 'Découverte',
+    price: 175,
+    badge: '🌟 Populaire',
+    description: '1 flacon — cure 1 mois',
+    image: '/images/offre-1.jpg',
   },
 ];
 
@@ -45,12 +45,12 @@ export default function ProductOffers() {
                   isBestValue ? 'border-blue-bright' : 'border-transparent'
                 }`}
               >
-                <div className="relative h-64 md:h-72 bg-blue-light">
+                <div className="relative aspect-[4/5] bg-blue-light">
                   <Image
                     src={offer.image}
                     alt={offer.title}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain"
                   />
                   <span className="absolute top-4 left-4 bg-blue-dark text-white text-xs font-bold px-3 py-1.5 rounded-full">
                     {offer.badge}
