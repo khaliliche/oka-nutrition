@@ -3,14 +3,17 @@
 const benefits = [
   {
     label: 'Freine la chute',
+    desc: 'Agit sur les récepteurs responsables de la chute de cheveux.',
     image: '/images/icon-benefit-1.jpg',
   },
   {
     label: 'Augmente la densité',
+    desc: 'Stimule les follicules capillaires pour une chevelure plus fournie.',
     image: '/images/icon-benefit-2.jpg',
   },
   {
     label: 'Renforce les cheveux',
+    desc: 'Apporte les nutriments essentiels à la vitalité du cheveu.',
     image: '/images/icon-benefit-3.jpg',
   },
 ];
@@ -26,13 +29,17 @@ export default function Benefits() {
           <div className="divider-blue mt-4" />
         </div>
 
-        <div className="max-w-4xl mx-auto flex sm:grid sm:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex sm:grid sm:grid-cols-3 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {benefits.map((b) => (
             <div
               key={b.label}
-              className="relative aspect-square rounded-xl overflow-hidden shrink-0 w-full sm:w-auto snap-center"
+              className="card-premium text-center flex flex-col items-center shrink-0 w-[85%] sm:w-auto snap-center"
             >
-              <Image src={b.image} alt={b.label} fill className="object-cover" />
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                <Image src={b.image} alt={b.label} fill className="object-cover" />
+              </div>
+              <h3 className="mt-4 font-bold text-blue-dark">{b.label}</h3>
+              <p className="mt-2 text-sm text-gray-600">{b.desc}</p>
             </div>
           ))}
         </div>
