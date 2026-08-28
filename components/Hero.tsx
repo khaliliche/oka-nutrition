@@ -18,7 +18,7 @@ const packs: (Offer & { isBestValue?: boolean })[] = [
   {
     id: 'offre-1',
     title: 'Découverte',
-    price: 199,
+    price: 175,
     badge: '',
     description: '1 flacon — 1 mois',
     image: '/images/offre-1.jpg',
