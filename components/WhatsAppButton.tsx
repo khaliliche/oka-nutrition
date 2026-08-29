@@ -1,16 +1,20 @@
 ﻿'use client';
 
+import { useLocale } from '@/context/LocaleContext';
+
 export default function WhatsAppButton() {
+  const { dict } = useLocale();
   const phoneNumber = '212661972751';
-  const message = 'Bonjour, je souhaite en savoir plus sur OKA Nutrition DHT Control.';
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    dict.whatsappButton.message
+  )}`;
 
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-40 bg-green-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+      className="fixed bottom-6 end-6 z-40 bg-green-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
       aria-label="Contactez-nous sur WhatsApp"
     >
       <svg

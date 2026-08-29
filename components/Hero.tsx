@@ -2,54 +2,56 @@
 
 import Image from 'next/image';
 import { useOrder, type Offer } from '@/context/OrderContext';
-
-const packs: (Offer & { isBestValue?: boolean })[] = [
-  {
-    id: 'offre-2',
-    title: 'Cure recommandée',
-    price: 349,
-    badge: '1 mois offert',
-    description: '3 flacons 2+1',
-    image: '/images/offre-2.jpg',
-    isBestValue: true,
-  },
-  {
-    id: 'offre-1',
-    title: 'Cure 1 mois',
-    price: 175,
-    badge: '',
-    description: '1 flacon — 1 mois',
-    image: '/images/offre-1.jpg',
-  },
-];
+import { useLocale } from '@/context/LocaleContext';
 
 export default function Hero() {
   const { openModal } = useOrder();
+  const { dict, locale } = useLocale();
+  const suffix = locale === 'ar' ? '-ar' : '';
+
+  const packs: (Offer & { isBestValue?: boolean })[] = [
+    {
+      id: 'offre-2',
+      title: dict.hero.packs.offre2.title,
+      price: 349,
+      badge: dict.hero.packs.offre2.badge,
+      description: dict.hero.packs.offre2.description,
+      image: `/images/offre-2${suffix}.jpg`,
+      isBestValue: true,
+    },
+    {
+      id: 'offre-1',
+      title: dict.hero.packs.offre1.title,
+      price: 175,
+      badge: dict.hero.packs.offre1.badge,
+      description: dict.hero.packs.offre1.description,
+      image: `/images/offre-1${suffix}.jpg`,
+    },
+  ];
 
   return (
     <section id="dht-control" className="relative bg-blue-light overflow-hidden">
-      <div className="relative w-full aspect-[530/500] bg-blue-light">
+      <div className="relative w-full aspect-[500/400] bg-blue-light">
         <Image
-          src="/images/hero-banner.png"
-          alt="OKA Nutrition DHT Control — Des cheveux plus forts, une routine plus ciblée"
+          src={`/images/hero-banner${suffix}.png`}
+          alt="OKA Nutrition DHT Control"
           fill
           className="object-contain"
           priority
         />
       </div>
 
-      {/* Bandeau offre — 2 packs côte à côte, chacun avec prix + CTA */}
       <div className="bg-blue-light py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 text-blue-dark text-xs sm:text-sm font-bold">
               <span className="text-yellow-400 tracking-tight">★★★★★</span>
-              + de 276 hommes satisfaits
+              {dict.hero.rating}
             </div>
           </div>
 
           <h2 className="mt-3 text-center font-heading text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-blue-dark">
-            Choisissez votre cure
+            {dict.hero.chooseCure}
           </h2>
 
           <div className="mt-6 flex sm:grid sm:grid-cols-2 gap-3 sm:gap-8 max-w-3xl mx-auto overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-auto sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -61,7 +63,7 @@ export default function Hero() {
                 }`}
               >
                 {pack.badge && (
-                  <span className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-blue-dark text-white text-[9px] sm:text-sm font-bold px-2 py-1 sm:px-3.5 sm:py-2 rounded-full z-10">
+                  <span className="absolute top-2 start-2 sm:top-4 sm:start-4 bg-blue-dark text-white text-[9px] sm:text-sm font-bold px-2 py-1 sm:px-3.5 sm:py-2 rounded-full z-10">
                     {pack.badge}
                   </span>
                 )}
@@ -89,7 +91,7 @@ export default function Hero() {
                     onClick={() => openModal(pack)}
                     className="btn-primary w-full mt-3 sm:mt-5 py-2 sm:py-4 text-xs sm:text-base"
                   >
-                    Commander
+                    {dict.hero.commander}
                   </button>
                 </div>
               </div>
@@ -104,21 +106,20 @@ export default function Hero() {
 
           <div className="mt-6 flex justify-center">
             <a href="#formule" className="btn-outline py-3 px-8">
-              Voir la formule
+              {dict.hero.seeFormula}
             </a>
           </div>
         </div>
       </div>
 
-      {/* Barre de confiance */}
       <div className="bg-white py-4">
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] sm:text-xs font-bold text-blue-dark text-center">
           <span className="inline-flex items-center gap-1.5">
             <span aria-hidden="true">🇲🇦</span>
-            Livraison gratuite partout au Maroc
+            {dict.hero.shipping}
           </span>
           <span className="hidden sm:inline text-gray-300">•</span>
-          <span>Paiement à la réception</span>
+          <span>{dict.hero.payment}</span>
         </div>
       </div>
     </section>

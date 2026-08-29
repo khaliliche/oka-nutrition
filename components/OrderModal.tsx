@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { useOrder } from '@/context/OrderContext';
+import { useLocale } from '@/context/LocaleContext';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
@@ -22,6 +23,8 @@ type FormData = {
 
 export default function OrderModal() {
   const { isOpen, selectedOffer, closeModal } = useOrder();
+  const { dict, locale } = useLocale();
+  const suffix = locale === 'ar' ? '-ar' : '';
   const [step, setStep] = useState<'offers' | 'form'>('offers');
   const [chosenOffer, setChosenOffer] = useState<Offer | null>(null);
 
@@ -31,6 +34,7 @@ export default function OrderModal() {
       setStep('form');
     }
   }, [isOpen, selectedOffer]);
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
@@ -41,19 +45,19 @@ export default function OrderModal() {
   const offers: Offer[] = [
     {
       id: 'offre-1',
-      title: 'Découverte',
+      title: dict.orderModal.offre1.title,
       price: 199,
-      badge: '🌟 Populaire',
-      description: '1 flacon – cure 1 mois',
-      image: '/images/offre-1.jpg',
+      badge: dict.orderModal.offre1.badge,
+      description: dict.orderModal.offre1.description,
+      image: `/images/offre-1${suffix}.jpg`,
     },
     {
       id: 'offre-2',
-      title: 'Cure complète',
+      title: dict.orderModal.offre2.title,
       price: 349,
-      badge: '⭐ Meilleure valeur',
-      description: '3 flacons – 2 achetés + 1 offert',
-      image: '/images/offre-2.jpg',
+      badge: dict.orderModal.offre2.badge,
+      description: dict.orderModal.offre2.description,
+      image: `/images/offre-2${suffix}.jpg`,
     },
   ];
 
@@ -84,12 +88,15 @@ export default function OrderModal() {
   const handleSubmit = () => {
     if (!chosenOffer || !isFormValid) return;
 
-    const message = `Bonjour, je souhaite commander l'offre "${chosenOffer.title}" (${chosenOffer.description}) au prix de ${chosenOffer.price} DH.
-
-Nom complet : ${formData.name}
-Téléphone : ${formData.phone}
-Ville : ${formData.city}
-Adresse exacte : ${formData.address}`;
+    const message = dict.orderModal.whatsappMessage(
+      chosenOffer.title,
+      chosenOffer.description,
+      chosenOffer.price,
+      formData.name,
+      formData.phone,
+      formData.city,
+      formData.address
+    );
 
     const url = `https://wa.me/212661972751?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -101,7 +108,7 @@ Adresse exacte : ${formData.address}`;
       <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-blue-dark">
-            {step === 'offers' ? 'Choisissez votre offre' : 'Vos informations de livraison'}
+            {step === 'offers' ? dict.orderModal.chooseOffer : dict.orderModal.deliveryInfo}
           </h2>
           <button
             onClick={handleClose}
@@ -130,7 +137,7 @@ Adresse exacte : ${formData.address}`;
                     className="object-contain"
                   />
                 </div>
-                <div className="flex-1 text-center sm:text-left">
+                <div className="flex-1 text-center sm:text-start">
                   <span className="inline-block bg-blue-bright text-white text-xs font-bold px-3 py-1 rounded-full mb-1">
                     {offer.badge}
                   </span>
@@ -144,7 +151,7 @@ Adresse exacte : ${formData.address}`;
                   onClick={() => handleSelectOffer(offer)}
                   className="btn-primary text-sm py-2 px-6 whitespace-nowrap"
                 >
-                  Commander
+                  {dict.orderModal.commander}
                 </button>
               </div>
             ))}
@@ -167,51 +174,51 @@ Adresse exacte : ${formData.address}`;
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-blue-dark mb-1">
-                  Nom complet
+                  {dict.orderModal.fullName}
                 </label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleChange('name', e.target.value)}
-                  placeholder="Votre nom et prénom"
+                  placeholder={dict.orderModal.fullNamePlaceholder}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-bright"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-blue-dark mb-1">
-                  Numéro de téléphone
+                  {dict.orderModal.phone}
                 </label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleChange('phone', e.target.value)}
-                  placeholder="06 12 34 56 78"
+                  placeholder={dict.orderModal.phonePlaceholder}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-bright"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-blue-dark mb-1">
-                  Ville
+                  {dict.orderModal.city}
                 </label>
                 <input
                   type="text"
                   value={formData.city}
                   onChange={(e) => handleChange('city', e.target.value)}
-                  placeholder="Ex : Casablanca"
+                  placeholder={dict.orderModal.cityPlaceholder}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-bright"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-semibold text-blue-dark mb-1">
-                  Adresse exacte
+                  {dict.orderModal.address}
                 </label>
                 <textarea
                   value={formData.address}
                   onChange={(e) => handleChange('address', e.target.value)}
-                  placeholder="Rue, numéro, quartier, repère..."
+                  placeholder={dict.orderModal.addressPlaceholder}
                   rows={3}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-bright resize-none"
                 />
@@ -223,14 +230,14 @@ Adresse exacte : ${formData.address}`;
                 onClick={() => setStep('offers')}
                 className="btn-outline flex-1 py-3"
               >
-                Retour
+                {dict.orderModal.back}
               </button>
               <button
                 onClick={handleSubmit}
                 disabled={!isFormValid}
                 className="btn-primary flex-1 py-3 disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Confirmer sur WhatsApp
+                {dict.orderModal.confirmWhatsapp}
               </button>
             </div>
           </div>
@@ -238,7 +245,7 @@ Adresse exacte : ${formData.address}`;
 
         {step === 'offers' && (
           <p className="mt-6 text-center text-sm text-gray-500">
-            Choisissez une offre pour renseigner vos informations de livraison.
+            {dict.orderModal.selectPrompt}
           </p>
         )}
       </div>

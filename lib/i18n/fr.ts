@@ -1,0 +1,123 @@
+import { Dictionary } from '@/types/i18n';
+
+export const fr: Dictionary = {
+  meta: {
+    title: 'OKA Nutrition – Solution naturelle contre la chute de cheveux',
+    description: 'Découvrez OKA Nutrition, le complément alimentaire 100% naturel pour retrouver une chevelure forte et en pleine santé. Livraison gratuite au Maroc.',
+  },
+  header: {
+    tabs: { dhtControl: 'DHT Control', formule: 'Formule', avis: 'Avis', faq: 'FAQ' },
+    commander: 'Commander',
+  },
+  promoBar: { text: 'CURE 3 MOIS · 2 ACHETÉS + 1 OFFERT' },
+  hero: {
+    rating: '+ de 276 hommes satisfaits',
+    chooseCure: 'Choisissez votre cure',
+    seeFormula: 'Voir la formule',
+    commander: 'Commander',
+    shipping: 'Livraison gratuite partout au Maroc',
+    payment: 'Paiement à la réception',
+    packs: {
+      offre2: { title: 'Cure recommandée', badge: '1 mois offert', description: '3 flacons 2+1' },
+      offre1: { title: 'Cure 1 mois', badge: '', description: '1 flacon — 1 mois' },
+    },
+  },
+  benefits: {
+    heading: 'Une formule, trois actions',
+    items: [
+      { label: 'Freine la chute', desc: 'Agit sur les récepteurs responsables de la chute de cheveux.' },
+      { label: 'Augmente la densité', desc: 'Stimule les follicules capillaires pour une chevelure plus fournie.' },
+      { label: 'Renforce les cheveux', desc: 'Apporte les nutriments essentiels à la vitalité du cheveu.' },
+    ],
+  },
+  formula: {
+    heading: 'Formule DHT Control —',
+    headingHighlight: 'Pour Homme',
+    lead: 'Une formule pensée pour les cheveux des hommes.',
+    body: 'DHT Control associe des actifs sélectionnés pour accompagner la santé et la force du cheveu au quotidien.',
+    tags: 'DHT · Force · Densité · Épaisseur · Protection',
+    ingredients: 'Avec notamment Saw Palmetto, L-Cystéine, L-Méthionine, Zinc, Sélénium et Vitamine D3.',
+  },
+  offers: {
+    ratingBadge: '+ de 276 hommes satisfaits',
+    limitedOffer: 'Offre à durée limitée',
+    heading1: 'Cure de 3 mois à seulement',
+    price: '349 DH',
+    badge: '2 mois achetés + 1 mois offert',
+    ctaMain: 'Commander maintenant',
+    ctaOutline: 'Voir la formule',
+  },
+  productOffers: {
+    heading: 'Choisissez votre cure',
+    offre2: { title: 'Cure recommandée', badge: '⭐ Meilleure valeur  1 mois offert', description: '3 flacons  2 achetés + 1 offert' },
+    offre1: { title: 'Cure 1 mois', badge: '🌟 Populaire', description: '1 flacon cure 1 mois' },
+    cta: 'Commander maintenant',
+  },
+  results: {
+    heading: 'Des résultats qui parlent',
+    before: 'AVANT',
+    after: 'APRÈS',
+    caption: "Résultats constatés après 3 mois d'utilisation",
+    efficacyLabel: "d'efficacité constatée",
+    stats: [
+      { label: 'Clients satisfaits', value: '250+' },
+      { label: 'Efficacité constatée', value: '95%' },
+      { label: 'Livraison en 48h', value: '100%' },
+      { label: 'Retour clients positifs', value: '4.7/5' },
+    ],
+  },
+  reviews: {
+    heading: 'Ils ont retrouvé confiance',
+    ratingBadge: '+276 hommes satisfaits',
+    items: [
+      { name: 'Karim B.', text: 'Après 2 mois, la chute a nettement diminué. Mes cheveux sont plus épais. Je recommande !' },
+      { name: 'Youssef M.', text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines.' },
+      { name: 'Mehdi S.', text: "J'ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné." },
+    ],
+  },
+  faq: {
+    heading: 'Questions fréquentes',
+    items: [
+      { q: 'Comment prendre OKA Nutrition ?', a: "Prenez 2 gélules par jour avec un grand verre d'eau, de préférence au cours d'un repas. Une cure de 3 mois est recommandée pour des résultats optimaux." },
+      { q: 'OKA Nutrition est-il sans danger ?', a: 'Oui, notre complément est 100% naturel et sans effets secondaires. Il est fabriqué dans des laboratoires certifiés et respecte les normes de qualité.' },
+      { q: 'Quels sont les délais de livraison ?', a: 'La livraison est gratuite partout au Maroc et se fait sous 48 à 72 heures ouvrables après validation de votre commande.' },
+    ],
+  },
+  finalCta: {
+    heading: 'Cure 3 mois à seulement',
+    price: '349 DH',
+    body: "Profitez de l'offre 2 achetés + 1 offert et retrouvez des cheveux plus forts dès maintenant.",
+    cta: 'Commander maintenant',
+  },
+  footer: {
+    description: 'Complément alimentaire 100% naturel pour la santé de vos cheveux. Livraison gratuite au Maroc.',
+    usefulLinks: 'Liens utiles',
+    offresLink: 'Nos offres',
+    avisLink: 'Avis',
+    faqLink: 'FAQ',
+    followUs: 'Suivez-nous',
+    instagram: 'Instagram',
+    copyright: 'Tous droits réservés.',
+  },
+  orderModal: {
+    chooseOffer: 'Choisissez votre offre',
+    deliveryInfo: 'Vos informations de livraison',
+    offre1: { title: 'Découverte', badge: '🌟 Populaire', description: '1 flacon – cure 1 mois' },
+    offre2: { title: 'Cure complète', badge: '⭐ Meilleure valeur', description: '3 flacons – 2 achetés + 1 offert' },
+    commander: 'Commander',
+    fullName: 'Nom complet',
+    fullNamePlaceholder: 'Votre nom et prénom',
+    phone: 'Numéro de téléphone',
+    phonePlaceholder: '06 12 34 56 78',
+    city: 'Ville',
+    cityPlaceholder: 'Ex : Casablanca',
+    address: 'Adresse exacte',
+    addressPlaceholder: 'Rue, numéro, quartier, repère...',
+    back: 'Retour',
+    confirmWhatsapp: 'Confirmer sur WhatsApp',
+    selectPrompt: 'Choisissez une offre pour renseigner vos informations de livraison.',
+    whatsappMessage: (title, description, price, name, phone, city, address) =>
+      `Bonjour, je souhaite commander l'offre "${title}" (${description}) au prix de ${price} DH.\n\nNom complet : ${name}\nTéléphone : ${phone}\nVille : ${city}\nAdresse exacte : ${address}`,
+  },
+  whatsappButton: { message: 'Bonjour, je souhaite en savoir plus sur OKA Nutrition DHT Control.' },
+};

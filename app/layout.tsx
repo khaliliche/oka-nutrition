@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display, Cairo } from 'next/font/google';
 import './globals.css';
 import { OrderProvider } from '@/context/OrderContext';
+import HtmlAttributes from '@/components/HtmlAttributes';
 
 const inter = Inter({ subsets: ['latin'] });
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
+});
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'],
+  variable: '--font-cairo',
 });
 
 export const metadata: Metadata = {
@@ -21,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <body className={`${inter.className} ${playfair.variable}`}>
+      <body className={`${inter.className} ${playfair.variable} ${cairo.variable}`}>
+        <HtmlAttributes />
         <OrderProvider>{children}</OrderProvider>
       </body>
     </html>

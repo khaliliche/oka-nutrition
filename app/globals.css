@@ -102,3 +102,7 @@ section[id] {
   .border-blue-light { border-color: var(--color-blue-light); }
 }
 .font-heading { font-family: var(--font-playfair), Georgia, serif; }
+.font-arabic,
+.font-arabic .font-heading {
+  font-family: var(--font-cairo), 'Segoe UI', Tahoma, sans-serif;
+}

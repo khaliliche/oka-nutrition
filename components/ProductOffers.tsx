@@ -2,35 +2,38 @@
 
 import Image from 'next/image';
 import { useOrder, type Offer } from '@/context/OrderContext';
-
-const offers: Offer[] = [
-  {
-    id: 'offre-2',
-    title: 'Cure recommandée',
-    price: 349,
-    badge: '⭐ Meilleure valeur  1 mois offert',
-    description: '3 flacons  2 achetés + 1 offert',
-    image: '/images/offre-2.jpg',
-  },
-  {
-    id: 'offre-1',
-    title: 'Cure 1 mois',
-    price: 175,
-    badge: '🌟 Populaire',
-    description: '1 flacon cure 1 mois',
-    image: '/images/offre-1.jpg',
-  },
-];
+import { useLocale } from '@/context/LocaleContext';
 
 export default function ProductOffers() {
   const { openModal } = useOrder();
+  const { dict, locale } = useLocale();
+  const suffix = locale === 'ar' ? '-ar' : '';
+
+  const offers: Offer[] = [
+    {
+      id: 'offre-2',
+      title: dict.productOffers.offre2.title,
+      price: 349,
+      badge: dict.productOffers.offre2.badge,
+      description: dict.productOffers.offre2.description,
+      image: `/images/offre-2${suffix}.jpg`,
+    },
+    {
+      id: 'offre-1',
+      title: dict.productOffers.offre1.title,
+      price: 175,
+      badge: dict.productOffers.offre1.badge,
+      description: dict.productOffers.offre1.description,
+      image: `/images/offre-1${suffix}.jpg`,
+    },
+  ];
 
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-xl mx-auto mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
-            Choisissez votre cure
+            {dict.productOffers.heading}
           </h2>
           <div className="divider-blue mt-4" />
         </div>
@@ -52,7 +55,7 @@ export default function ProductOffers() {
                     fill
                     className="object-contain"
                   />
-                  <span className="absolute top-4 left-4 bg-blue-dark text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                  <span className="absolute top-4 start-4 bg-blue-dark text-white text-xs font-bold px-3 py-1.5 rounded-full">
                     {offer.badge}
                   </span>
                 </div>
@@ -71,7 +74,7 @@ export default function ProductOffers() {
                     onClick={() => openModal(offer)}
                     className="btn-primary w-full mt-5 py-3"
                   >
-                    Commander maintenant
+                    {dict.productOffers.cta}
                   </button>
                 </div>
               </div>

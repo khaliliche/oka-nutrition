@@ -1,0 +1,123 @@
+import { Dictionary } from '@/types/i18n';
+
+export const ar: Dictionary = {
+  meta: {
+    title: 'أوكا نيوتريشن – الحل الطبيعي لتساقط الشعر',
+    description: 'اكتشف أوكا نيوتريشن، المكمل الغذائي الطبيعي 100% لاستعادة شعر قوي وصحي. توصيل مجاني في جميع أنحاء المغرب.',
+  },
+  header: {
+    tabs: { dhtControl: 'DHT Control', formule: 'التركيبة', avis: 'الآراء', faq: 'الأسئلة الشائعة' },
+    commander: 'اطلب الآن',
+  },
+  promoBar: { text: 'علاج 3 أشهر · اشترِ 2 واحصل على 1 مجانًا' },
+  hero: {
+    rating: '+ 276 رجل راضٍ',
+    chooseCure: 'اختر علاجك',
+    seeFormula: 'شاهد التركيبة',
+    commander: 'اطلب الآن',
+    shipping: 'توصيل مجاني في جميع أنحاء المغرب',
+    payment: 'الدفع عند الاستلام',
+    packs: {
+      offre2: { title: 'العلاج الموصى به', badge: 'شهر مجاني', description: '3 عبوات 2+1' },
+      offre1: { title: 'علاج شهر واحد', badge: '', description: 'عبوة واحدة — شهر' },
+    },
+  },
+  benefits: {
+    heading: 'تركيبة واحدة، ثلاث فوائد',
+    items: [
+      { label: 'يوقف التساقط', desc: 'يعمل على المستقبلات المسؤولة عن تساقط الشعر.' },
+      { label: 'يزيد الكثافة', desc: 'ينشط بصيلات الشعر للحصول على شعر أكثف.' },
+      { label: 'يقوي الشعر', desc: 'يوفر العناصر الغذائية الأساسية لحيوية الشعر.' },
+    ],
+  },
+  formula: {
+    heading: 'تركيبة DHT Control —',
+    headingHighlight: 'للرجال',
+    lead: 'تركيبة مصممة خصيصًا لشعر الرجال.',
+    body: 'تجمع DHT Control بين مكونات مختارة لدعم صحة وقوة الشعر يوميًا.',
+    tags: 'DHT · القوة · الكثافة · السماكة · الحماية',
+    ingredients: 'تحتوي على Saw Palmetto، L-Cystéine، L-Méthionine، الزنك، السيلينيوم وفيتامين D3.',
+  },
+  offers: {
+    ratingBadge: '+ 276 رجل راضٍ',
+    limitedOffer: 'عرض لمدة محدودة',
+    heading1: 'علاج 3 أشهر بسعر',
+    price: '349 درهم',
+    badge: 'شهرين مدفوعين + شهر مجاني',
+    ctaMain: 'اطلب الآن',
+    ctaOutline: 'شاهد التركيبة',
+  },
+  productOffers: {
+    heading: 'اختر علاجك',
+    offre2: { title: 'العلاج الموصى به', badge: '⭐ أفضل قيمة  شهر مجاني', description: '3 عبوات  اشترِ 2 واحصل على 1' },
+    offre1: { title: 'علاج شهر واحد', badge: '🌟 الأكثر طلبًا', description: 'عبوة واحدة لعلاج شهر' },
+    cta: 'اطلب الآن',
+  },
+  results: {
+    heading: 'نتائج تتحدث عن نفسها',
+    before: 'قبل',
+    after: 'بعد',
+    caption: 'نتائج ملحوظة بعد 3 أشهر من الاستخدام',
+    efficacyLabel: 'نسبة الفعالية الملحوظة',
+    stats: [
+      { label: 'عملاء راضون', value: '+250' },
+      { label: 'فعالية ملحوظة', value: '95%' },
+      { label: 'توصيل خلال 48 ساعة', value: '100%' },
+      { label: 'تقييمات إيجابية', value: '4.7/5' },
+    ],
+  },
+  reviews: {
+    heading: 'استعادوا ثقتهم بأنفسهم',
+    ratingBadge: '+276 رجل راضٍ',
+    items: [
+      { name: 'Karim B.', text: 'بعد شهرين، تراجع التساقط بشكل ملحوظ. شعري أصبح أكثف. أنصح به بشدة!' },
+      { name: 'Youssef M.', text: 'منتج فعال وطبيعي. لاحظت تحسنًا واضحًا بعد 6 أسابيع.' },
+      { name: 'Mehdi S.', text: 'جربت عدة منتجات، وOKA Nutrition DHT Control هو الوحيد الذي نجح فعلاً.' },
+    ],
+  },
+  faq: {
+    heading: 'الأسئلة الشائعة',
+    items: [
+      { q: 'كيف أستخدم أوكا نيوتريشن؟', a: 'تناول كبسولتين يوميًا مع كوب كبير من الماء، ويفضل خلال وجبة. يُنصح بعلاج مدته 3 أشهر للحصول على أفضل النتائج.' },
+      { q: 'هل أوكا نيوتريشن آمن؟', a: 'نعم، مكملنا طبيعي 100% وخالٍ من الآثار الجانبية. يُصنّع في مختبرات معتمدة ويحترم معايير الجودة.' },
+      { q: 'ما هي مدة التوصيل؟', a: 'التوصيل مجاني في جميع أنحاء المغرب ويتم خلال 48 إلى 72 ساعة عمل بعد تأكيد طلبك.' },
+    ],
+  },
+  finalCta: {
+    heading: 'علاج 3 أشهر بسعر',
+    price: '349 درهم',
+    body: 'استفد من عرض اشترِ 2 واحصل على 1 مجانًا واستعد شعرًا أقوى من الآن.',
+    cta: 'اطلب الآن',
+  },
+  footer: {
+    description: 'مكمل غذائي طبيعي 100% لصحة شعرك. توصيل مجاني في المغرب.',
+    usefulLinks: 'روابط مفيدة',
+    offresLink: 'عروضنا',
+    avisLink: 'الآراء',
+    faqLink: 'الأسئلة الشائعة',
+    followUs: 'تابعنا',
+    instagram: 'إنستغرام',
+    copyright: 'جميع الحقوق محفوظة.',
+  },
+  orderModal: {
+    chooseOffer: 'اختر عرضك',
+    deliveryInfo: 'معلومات التوصيل',
+    offre1: { title: 'تجريبي', badge: '🌟 الأكثر طلبًا', description: 'عبوة واحدة – علاج شهر' },
+    offre2: { title: 'العلاج الكامل', badge: '⭐ أفضل قيمة', description: '3 عبوات – اشترِ 2 واحصل على 1' },
+    commander: 'اطلب الآن',
+    fullName: 'الاسم الكامل',
+    fullNamePlaceholder: 'اسمك ونسبك',
+    phone: 'رقم الهاتف',
+    phonePlaceholder: '06 12 34 56 78',
+    city: 'المدينة',
+    cityPlaceholder: 'مثال: الدار البيضاء',
+    address: 'العنوان الكامل',
+    addressPlaceholder: 'الشارع، الرقم، الحي، علامة مميزة...',
+    back: 'رجوع',
+    confirmWhatsapp: 'تأكيد عبر واتساب',
+    selectPrompt: 'اختر عرضًا لإدخال معلومات التوصيل.',
+    whatsappMessage: (title, description, price, name, phone, city, address) =>
+      `مرحبًا، أرغب في طلب عرض "${title}" (${description}) بسعر ${price} درهم.\n\nالاسم الكامل: ${name}\nالهاتف: ${phone}\nالمدينة: ${city}\nالعنوان الكامل: ${address}`,
+  },
+  whatsappButton: { message: 'مرحبًا، أرغب في معرفة المزيد عن OKA Nutrition DHT Control.' },
+};
