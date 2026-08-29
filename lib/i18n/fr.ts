@@ -38,12 +38,12 @@ export const fr: Dictionary = {
       { label: 'Renforce les cheveux', desc: 'Apporte les nutriments essentiels à la vitalité du cheveu.' },
     ],
   },
-  formula: {
-    heading: 'Formule DHT Control ',
-    headingHighlight: 'Pour Homme',
-        mobileSubtitle: '6 actifs sélectionnés pour soutenir la force, la densité et la santé du cheveu.',
-    lead: 'Une formule pensée pour les cheveux des hommes.',
-    body: 'DHT Control associe des actifs sélectionnés pour accompagner la santé et la force du cheveu au quotidien.',
+    formula: {
+    heading: 'La force de DHT Control',
+    headingHighlight: '',
+    mobileSubtitle: '6 actifs sélectionnés pour soutenir la force, la densité et la santé du cheveu.',
+    lead: 'Pourquoi ces 6 actifs ?',
+    body: 'Chaque actif a été sélectionné pour jouer un rôle complémentaire dans le maintien de cheveux forts et en bonne santé.',
     tags: 'DHT · Force · Densité · Épaisseur · Protection',
     ingredients: 'Avec notamment Saw Palmetto, L-Cystéine, L-Méthionine, Zinc, Sélénium et Vitamine D3.',
   },
@@ -78,10 +78,12 @@ export const fr: Dictionary = {
   reviews: {
     heading: 'Ils ont retrouvé confiance',
     ratingBadge: '+276 hommes satisfaits',
-    items: [
+        items: [
       { name: 'Karim B.', text: 'Après 2 mois, la chute a nettement diminué. Mes cheveux sont plus épais. Je recommande !' },
-      { name: 'Youssef M.', text: 'Produit efficace et naturel. Je vois une nette amélioration après 6 semaines.' },
+      { name: 'Youssef M.', text: 'بعد 6 أسابيع فقط، لاحظت تحسنًا واضحًا في كثافة شعري. منتج طبيعي وفعال.' },
       { name: 'Mehdi S.', text: "J'ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné." },
+      { name: 'Hamza R.', text: 'التساقط توقف تقريبًا بعد 3 أشهر من الاستعمال. جودة ممتازة وأنصح به لكل رجل يعاني من هذه المشكلة.' },
+      { name: 'Yassine T.', text: 'Un vrai changement en quelques semaines. Cheveux plus forts et moins de chute au lavage.' },
     ],
   },
   faq: {

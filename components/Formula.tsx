@@ -12,12 +12,9 @@ export default function Formula() {
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         {/* Heading — shown above the video on mobile only; grouped with body text on desktop */}
         <div className="text-center order-1 md:hidden">
-          <h2 className="font-heading text-3xl font-bold text-blue-dark leading-tight">
+          <h2 className="font-heading text-3xl font-bold text-blue-dark leading-tight relative inline-block">
             {dict.formula.heading}
-          </h2>
-          <h2 className="font-heading text-3xl font-bold text-blue-bright leading-tight relative inline-block">
-            {dict.formula.headingHighlight}
-            <span className="block h-1 w-16 bg-blue-bright/40 rounded-full mx-auto mt-1" />
+            <span className="block h-1 w-16 bg-blue-bright/40 rounded-full mx-auto mt-2" />
           </h2>
           <p className="mt-4 text-base font-semibold text-blue-dark px-4">
             {dict.formula.mobileSubtitle}
@@ -32,7 +29,7 @@ export default function Formula() {
               poster={`/images/formula-video-poster${suffix}.jpg`}
               controls
               playsInline
-              className="w-full h-full object-contain bg-black"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -40,7 +37,7 @@ export default function Formula() {
         {/* Body text — on desktop this includes the heading (hidden mobile copy above handles small screens) */}
         <div className="flex-1 text-center md:text-start order-3 md:order-2">
           <h2 className="hidden md:block font-heading text-3xl md:text-4xl font-bold text-blue-dark">
-            {dict.formula.heading} <span className="text-blue-bright">{dict.formula.headingHighlight}</span>
+            {dict.formula.heading}
           </h2>
           <div className="hidden md:block divider-blue mt-4 mx-auto md:mx-0" />
 
