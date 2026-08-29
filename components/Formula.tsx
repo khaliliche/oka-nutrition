@@ -10,8 +10,16 @@ export default function Formula() {
   return (
     <section id="formule" className="py-16 md:py-24 bg-blue-light">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-        {/* Video slot — drop a <video>/<iframe> in here later, same rounded card treatment as the image below */}
-        <div className="flex-1 w-full flex justify-center order-1">
+        {/* Heading — shown above the video on mobile; grouped with body text on desktop */}
+        <div className="flex-1 text-center md:text-start order-1 md:order-2 md:hidden">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
+            {dict.formula.heading} <span className="text-blue-bright">{dict.formula.headingHighlight}</span>
+          </h2>
+          <div className="divider-blue mt-4 mx-auto md:mx-0" />
+        </div>
+
+        {/* Video slot */}
+        <div className="flex-1 w-full flex justify-center order-2 md:order-1">
           <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/16] rounded-[2rem] overflow-hidden shadow-xl bg-white border border-blue-bright/15">
             <video
               src="/videos/formula-demo.mp4"
@@ -22,13 +30,14 @@ export default function Formula() {
           </div>
         </div>
 
-        <div className="flex-1 text-center md:text-start order-2">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
+        {/* Body text — on desktop this includes the heading (hidden mobile copy above handles small screens) */}
+        <div className="flex-1 text-center md:text-start order-3 md:order-2">
+          <h2 className="hidden md:block font-heading text-3xl md:text-4xl font-bold text-blue-dark">
             {dict.formula.heading} <span className="text-blue-bright">{dict.formula.headingHighlight}</span>
           </h2>
-          <div className="divider-blue mt-4 mx-auto md:mx-0" />
+          <div className="hidden md:block divider-blue mt-4 mx-auto md:mx-0" />
 
-          <p className="mt-6 text-xl font-semibold text-blue-dark">
+          <p className="mt-6 md:mt-6 text-xl font-semibold text-blue-dark">
             {dict.formula.lead}
           </p>
           <p className="mt-3 text-lg text-gray-700">
@@ -44,7 +53,7 @@ export default function Formula() {
           </p>
         </div>
 
-        <div className="flex-1 w-full flex justify-center order-3">
+        <div className="flex-1 w-full flex justify-center order-4 md:order-3">
           <div className="relative w-full max-w-[380px] md:max-w-[440px] aspect-[461/562] rounded-[2rem] overflow-hidden shadow-xl bg-white">
             <Image
               src={`/images/formula${suffix}.jpg`}
