@@ -10,12 +10,18 @@ export default function Formula() {
   return (
     <section id="formule" className="py-16 md:py-24 bg-blue-light">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-        {/* Heading — shown above the video on mobile; grouped with body text on desktop */}
-        <div className="flex-1 text-center md:text-start order-1 md:order-2 md:hidden">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">
-            {dict.formula.heading} <span className="text-blue-bright">{dict.formula.headingHighlight}</span>
+        {/* Heading — shown above the video on mobile only; grouped with body text on desktop */}
+        <div className="text-center order-1 md:hidden">
+          <h2 className="font-heading text-3xl font-bold text-blue-dark leading-tight">
+            {dict.formula.heading}
           </h2>
-          <div className="divider-blue mt-4 mx-auto md:mx-0" />
+          <h2 className="font-heading text-3xl font-bold text-blue-bright leading-tight relative inline-block">
+            {dict.formula.headingHighlight}
+            <span className="block h-1 w-16 bg-blue-bright/40 rounded-full mx-auto mt-1" />
+          </h2>
+          <p className="mt-4 text-base font-semibold text-blue-dark px-4">
+            {dict.formula.mobileSubtitle}
+          </p>
         </div>
 
         {/* Video slot */}
@@ -54,7 +60,7 @@ export default function Formula() {
         </div>
 
         <div className="flex-1 w-full flex justify-center order-4 md:order-3">
-          <div className="relative w-full max-w-[380px] md:max-w-[440px] aspect-[461/562] rounded-[2rem] overflow-hidden shadow-xl bg-white">
+          <div className="relative w-full max-w-[380px] md:max-w-[440px] aspect-[1149/1369] rounded-[2rem] overflow-hidden shadow-xl bg-white">
             <Image
               src={`/images/formula${suffix}.jpg`}
               alt={dict.formula.heading}

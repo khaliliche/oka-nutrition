@@ -34,6 +34,7 @@ export type Dictionary = {
   formula: {
     heading: string;
     headingHighlight: string;
+     mobileSubtitle: string;
     lead: string;
     body: string;
     tags: string;

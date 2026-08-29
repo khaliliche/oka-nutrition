@@ -39,8 +39,9 @@ export const ar: Dictionary = {
     ],
   },
   formula: {
-    heading: 'تركيبة DHT Control —',
+    heading: 'تركيبة DHT Control ',
     headingHighlight: 'للرجال',
+    mobileSubtitle: '6 مكونات فعالة مختارة لدعم قوة الشعر وكثافته وصحته.',
     lead: 'تركيبة مصممة خصيصًا لشعر الرجال.',
     body: 'تجمع DHT Control بين مكونات مختارة لدعم صحة وقوة الشعر يوميًا.',
     tags: 'DHT · القوة · الكثافة · السماكة · الحماية',

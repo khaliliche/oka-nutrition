@@ -39,8 +39,9 @@ export const fr: Dictionary = {
     ],
   },
   formula: {
-    heading: 'Formule DHT Control —',
+    heading: 'Formule DHT Control ',
     headingHighlight: 'Pour Homme',
+        mobileSubtitle: '6 actifs sélectionnés pour soutenir la force, la densité et la santé du cheveu.',
     lead: 'Une formule pensée pour les cheveux des hommes.',
     body: 'DHT Control associe des actifs sélectionnés pour accompagner la santé et la force du cheveu au quotidien.',
     tags: 'DHT · Force · Densité · Épaisseur · Protection',
