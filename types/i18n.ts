@@ -18,6 +18,14 @@ export type Dictionary = {
       offre2: { title: string; badge: string; description: string };
       offre1: { title: string; badge: string; description: string };
     };
+        desktop: {
+      headline1: string;
+      headline2: string;
+      description: string;
+      originalPrice: string;
+      oneMonthLabel: string;
+      threeMonthLabel: string;
+    };
   };
   benefits: {
     heading: string;

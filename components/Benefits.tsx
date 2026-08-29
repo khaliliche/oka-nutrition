@@ -3,14 +3,15 @@
 import Image from 'next/image';
 import { useLocale } from '@/context/LocaleContext';
 
-const images = [
-  '/images/icon-benefit-1.jpg',
-  '/images/icon-benefit-2.jpg',
-  '/images/icon-benefit-3.jpg',
-];
-
 export default function Benefits() {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
+  const suffix = locale === 'ar' ? '-ar' : '';
+
+  const images = [
+    `/images/icon-benefit-1${suffix}.jpg`,
+    `/images/icon-benefit-2${suffix}.jpg`,
+    `/images/icon-benefit-3${suffix}.jpg`,
+  ];
 
   return (
     <section className="bg-white py-16">

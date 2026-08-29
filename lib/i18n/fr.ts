@@ -2,7 +2,7 @@ import { Dictionary } from '@/types/i18n';
 
 export const fr: Dictionary = {
   meta: {
-    title: 'OKA Nutrition – Solution naturelle contre la chute de cheveux',
+    title: 'OKA Nutrition  Solution naturelle contre la chute de cheveux',
     description: 'Découvrez OKA Nutrition, le complément alimentaire 100% naturel pour retrouver une chevelure forte et en pleine santé. Livraison gratuite au Maroc.',
   },
   header: {
@@ -21,6 +21,14 @@ export const fr: Dictionary = {
       offre2: { title: 'Cure recommandée', badge: '1 mois offert', description: '3 flacons 2+1' },
       offre1: { title: 'Cure 1 mois', badge: '', description: '1 flacon — 1 mois' },
     },
+        desktop: {
+      headline1: 'Des cheveux plus forts.',
+      headline2: 'Une routine plus ciblée.',
+      description: 'DHT Control  La formule complète pour lutter contre la chute et renforcer vos cheveux.',
+      originalPrice: '199 DH',
+      oneMonthLabel: 'Cure 1 mois dès',
+      threeMonthLabel: 'Cure 3 mois à',
+    },
   },
   benefits: {
     heading: 'Une formule, trois actions',
@@ -31,7 +39,7 @@ export const fr: Dictionary = {
     ],
   },
   formula: {
-    heading: 'Formule DHT Control —',
+    heading: 'Formule DHT Control ',
     headingHighlight: 'Pour Homme',
     lead: 'Une formule pensée pour les cheveux des hommes.',
     body: 'DHT Control associe des actifs sélectionnés pour accompagner la santé et la force du cheveu au quotidien.',

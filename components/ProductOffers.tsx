@@ -9,24 +9,25 @@ export default function ProductOffers() {
   const { dict, locale } = useLocale();
   const suffix = locale === 'ar' ? '-ar' : '';
 
-  const offers: Offer[] = [
-    {
-      id: 'offre-2',
-      title: dict.productOffers.offre2.title,
-      price: 349,
-      badge: dict.productOffers.offre2.badge,
-      description: dict.productOffers.offre2.description,
-      image: `/images/offre-2${suffix}.jpg`,
-    },
-    {
-      id: 'offre-1',
-      title: dict.productOffers.offre1.title,
-      price: 175,
-      badge: dict.productOffers.offre1.badge,
-      description: dict.productOffers.offre1.description,
-      image: `/images/offre-1${suffix}.jpg`,
-    },
-  ];
+  const offre2: Offer = {
+    id: 'offre-2',
+    title: dict.productOffers.offre2.title,
+    price: 349,
+    badge: dict.productOffers.offre2.badge,
+    description: dict.productOffers.offre2.description,
+    image: `/images/offre-2${suffix}.jpg`,
+  };
+
+  const offre1: Offer = {
+    id: 'offre-1',
+    title: dict.productOffers.offre1.title,
+    price: 175,
+    badge: dict.productOffers.offre1.badge,
+    description: dict.productOffers.offre1.description,
+    image: `/images/offre-1${suffix}.jpg`,
+  };
+
+  const offers: Offer[] = locale === 'ar' ? [offre1, offre2] : [offre2, offre1];
 
   return (
     <section className="py-16 md:py-20 bg-white">

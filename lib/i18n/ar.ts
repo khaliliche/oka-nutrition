@@ -2,7 +2,7 @@ import { Dictionary } from '@/types/i18n';
 
 export const ar: Dictionary = {
   meta: {
-    title: 'أوكا نيوتريشن – الحل الطبيعي لتساقط الشعر',
+    title: 'أوكا نيوتريشن الحل الطبيعي لتساقط الشعر',
     description: 'اكتشف أوكا نيوتريشن، المكمل الغذائي الطبيعي 100% لاستعادة شعر قوي وصحي. توصيل مجاني في جميع أنحاء المغرب.',
   },
   header: {
@@ -21,6 +21,14 @@ export const ar: Dictionary = {
       offre2: { title: 'العلاج الموصى به', badge: 'شهر مجاني', description: '3 عبوات 2+1' },
       offre1: { title: 'علاج شهر واحد', badge: '', description: 'عبوة واحدة — شهر' },
     },
+        desktop: {
+      headline1: 'شعر أقوى.',
+      headline2: 'روتين أكثر استهدافاً.',
+      description: 'DHT Control  التركيبة الكاملة لمحاربة تساقط الشعر وتقويته.',
+      originalPrice: '199 درهم',
+      oneMonthLabel: 'علاج شهر واحد بدءاً من',
+      threeMonthLabel: 'علاج 3 أشهر بسعر',
+    },
   },
   benefits: {
     heading: 'تركيبة واحدة، ثلاث فوائد',
@@ -31,7 +39,7 @@ export const ar: Dictionary = {
     ],
   },
   formula: {
-    heading: 'تركيبة DHT Control —',
+    heading: 'تركيبة DHT Control ',
     headingHighlight: 'للرجال',
     lead: 'تركيبة مصممة خصيصًا لشعر الرجال.',
     body: 'تجمع DHT Control بين مكونات مختارة لدعم صحة وقوة الشعر يوميًا.',
