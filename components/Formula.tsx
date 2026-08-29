@@ -27,13 +27,13 @@ export default function Formula() {
         {/* Video slot */}
         <div className="flex-1 w-full flex justify-center order-2 md:order-1">
           <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/16] rounded-[2rem] overflow-hidden shadow-xl bg-white border border-blue-bright/15">
-           <video
-               src="/videos/formula-demo.mp4"
-               poster={`/images/formula-video-poster${suffix}.jpg`}
-               controls
-               playsInline
-               className="w-full h-full object-cover"
-/>
+            <video
+              src="/videos/formula-demo.mp4"
+              poster={`/images/formula-video-poster${suffix}.jpg`}
+              controls
+              playsInline
+              className="w-full h-full object-contain bg-black"
+            />
           </div>
         </div>
 
