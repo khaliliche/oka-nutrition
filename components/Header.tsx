@@ -75,7 +75,7 @@ export default function Header() {
               href={otherLocaleHref}
               className="text-xs font-bold text-white/90 hover:text-white border border-white/30 rounded-full px-3 py-1 transition whitespace-nowrap"
             >
-              {locale === "fr" ? "Français" : "العربية"}
+             {locale === "fr" ? "العربية" : "Français"}
             </Link>
 
             <button
