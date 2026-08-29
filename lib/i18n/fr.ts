@@ -38,7 +38,7 @@ export const fr: Dictionary = {
       { label: 'Renforce les cheveux', desc: 'Apporte les nutriments essentiels à la vitalité du cheveu.' },
     ],
   },
-    formula: {
+  formula: {
     heading: 'La force de DHT Control',
     headingHighlight: '',
     mobileSubtitle: '6 actifs sélectionnés pour soutenir la force, la densité et la santé du cheveu.',
@@ -68,6 +68,10 @@ export const fr: Dictionary = {
     after: 'APRÈS',
     caption: "Résultats constatés après 3 mois d'utilisation",
     efficacyLabel: "d'efficacité constatée",
+    testimonial: {
+      text: "Après 3 mois avec DHT Control, la différence est vraiment visible. Ma zone frontale s'est densifiée et je reçois plein de compliments sur mes cheveux.",
+      name: 'Amine K., 34 ans',
+    },
     stats: [
       { label: 'Clients satisfaits', value: '250+' },
       { label: 'Efficacité constatée', value: '95%' },
@@ -78,7 +82,7 @@ export const fr: Dictionary = {
   reviews: {
     heading: 'Ils ont retrouvé confiance',
     ratingBadge: '+276 hommes satisfaits',
-        items: [
+    items: [
       { name: 'Karim B.', text: 'بعد شهرين، تراجع التساقط بشكل ملحوظ. شعري أصبح أكثف. أنصح به بشدة!' },
       { name: 'Youssef M.', text: 'Résultats visibles après seulement 6 semaines. Produit naturel et efficace.' },
       { name: 'Mehdi S.', text: 'جربت عدة منتجات، وOKA Nutrition DHT Control هو الوحيد الذي نجح فعلاً.' },

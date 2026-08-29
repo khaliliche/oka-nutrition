@@ -199,14 +199,21 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="bg-white py-4">
-        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] sm:text-xs font-bold text-blue-dark text-center">
-          <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden="true">🇲🇦</span>
+      <div className="bg-blue-dark py-3.5">
+        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-bold text-white text-center">
+          <span className="inline-flex items-center gap-2">
+            <svg className="w-4 h-4 text-blue-bright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16V6a1 1 0 011-1h6a1 1 0 011 1v10m-8 0h8m-8 0a2 2 0 11-4 0m4 0a2 2 0 104 0m4 0a2 2 0 104 0m-4 0h4m0 0V9a1 1 0 00-.293-.707l-2-2A1 1 0 0016 6h-1" />
+            </svg>
             {dict.hero.shipping}
           </span>
-          <span className="hidden sm:inline text-gray-300">•</span>
-          <span>{dict.hero.payment}</span>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <span className="inline-flex items-center gap-2">
+            <svg className="w-4 h-4 text-blue-bright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .672-3 1.5S10.343 11 12 11s3 .672 3 1.5-1.343 1.5-3 1.5m0-6V6m0 1.5V14m0 1.5V16m0-14a10 10 0 100 20 10 10 0 000-20z" />
+            </svg>
+            {dict.hero.payment}
+          </span>
         </div>
       </div>
       </div>

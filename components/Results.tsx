@@ -18,8 +18,8 @@ export default function Results() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="relative">
-            <div className="relative w-full h-[280px] sm:h-[360px] md:h-[400px] rounded-[1.75rem] overflow-hidden shadow-2xl">
+          <div className="relative max-w-sm mx-auto md:max-w-none">
+            <div className="relative w-full aspect-[806/652] rounded-[1.75rem] overflow-hidden shadow-2xl">
               <Image
                 src={`/images/results-2${suffix}.jpg`}
                 alt={dict.results.heading}
@@ -44,6 +44,17 @@ export default function Results() {
             <div className="absolute -bottom-5 end-4 md:-end-6 bg-white rounded-2xl shadow-xl px-4 py-3 text-center">
               <p className="font-heading text-2xl font-bold text-blue-bright leading-none">95%</p>
               <p className="text-[11px] text-gray-500 mt-1">{dict.results.efficacyLabel}</p>
+            </div>
+
+            <div className="mt-10 md:mt-8 bg-blue-light rounded-2xl px-5 py-5 text-center md:text-start">
+              <span className="font-heading text-4xl text-blue-bright/30 leading-none">&ldquo;</span>
+              <p className="-mt-3 text-gray-700 italic text-sm sm:text-base">
+                {dict.results.testimonial.text}
+              </p>
+              <p className="mt-3 font-bold text-blue-dark text-sm flex items-center justify-center md:justify-start gap-2">
+                {dict.results.testimonial.name}
+                <span className="text-yellow-400 text-xs">★★★★★</span>
+              </p>
             </div>
           </div>
 

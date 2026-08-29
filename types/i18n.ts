@@ -61,6 +61,7 @@ export type Dictionary = {
     after: string;
     caption: string;
     efficacyLabel: string;
+    testimonial: { text: string; name: string };
     stats: { label: string; value: string }[];
   };
   reviews: {

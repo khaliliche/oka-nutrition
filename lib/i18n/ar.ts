@@ -38,7 +38,7 @@ export const ar: Dictionary = {
       { label: 'يقوي الشعر', desc: 'يوفر العناصر الغذائية الأساسية لحيوية الشعر.' },
     ],
   },
-    formula: {
+  formula: {
     heading: 'قوة DHT Control',
     headingHighlight: '',
     mobileSubtitle: '6 مكونات فعالة مختارة لدعم قوة الشعر وكثافته وصحته.',
@@ -68,6 +68,10 @@ export const ar: Dictionary = {
     after: 'بعد',
     caption: 'نتائج ملحوظة بعد 3 أشهر من الاستخدام',
     efficacyLabel: 'نسبة الفعالية الملحوظة',
+    testimonial: {
+      text: 'بعد 3 أشهر من استخدام DHT Control، الفرق واضح جدًا. منطقة مقدمة الرأس أصبحت أكثف وأتلقى الكثير من الإطراءات على شعري.',
+      name: 'أمين ك.، 34 سنة',
+    },
     stats: [
       { label: 'عملاء راضون', value: '+250' },
       { label: 'فعالية ملحوظة', value: '95%' },
@@ -78,7 +82,7 @@ export const ar: Dictionary = {
   reviews: {
     heading: 'استعادوا ثقتهم بأنفسهم',
     ratingBadge: '+276 رجل راضٍ',
-        items: [
+    items: [
       { name: 'Karim B.', text: 'بعد شهرين، تراجع التساقط بشكل ملحوظ. شعري أصبح أكثف. أنصح به بشدة!' },
       { name: 'Youssef M.', text: 'Résultats visibles après seulement 6 semaines. Produit naturel et efficace.' },
       { name: 'Mehdi S.', text: 'جربت عدة منتجات، وOKA Nutrition DHT Control هو الوحيد الذي نجح فعلاً.' },

@@ -47,14 +47,6 @@ export default function Formula() {
           <p className="mt-3 text-lg text-gray-700">
             {dict.formula.body}
           </p>
-
-          <p className="mt-6 text-sm font-bold tracking-[0.15em] text-blue-bright uppercase">
-            {dict.formula.tags}
-          </p>
-
-          <p className="mt-4 text-sm text-gray-500">
-            {dict.formula.ingredients}
-          </p>
         </div>
 
         <div className="flex-1 w-full flex justify-center order-4 md:order-3">
