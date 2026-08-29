@@ -73,9 +73,9 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={otherLocaleHref}
-              className="text-xs font-bold text-white/90 hover:text-white border border-white/30 rounded-full px-2.5 py-1 transition"
+              className="text-xs font-bold text-white/90 hover:text-white border border-white/30 rounded-full px-3 py-1 transition whitespace-nowrap"
             >
-              {locale === "fr" ? "AR" : "FR"}
+              {locale === "fr" ? "Français" : "العربية"}
             </Link>
 
             <button
