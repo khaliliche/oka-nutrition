@@ -199,7 +199,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="bg-blue-dark py-3.5">
+      <div style={{ backgroundColor: "#0E1C4D" }} className="py-3.5">
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-bold text-white text-center">
           <span className="inline-flex items-center gap-2">
             <svg className="w-4 h-4 text-blue-bright" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -14,7 +14,7 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-xl mx-auto mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-blue-dark">

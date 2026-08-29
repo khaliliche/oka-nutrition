@@ -8,7 +8,7 @@ export default function Formula() {
   const suffix = locale === 'ar' ? '-ar' : '';
 
   return (
-    <section id="formule" className="py-16 md:py-24 bg-blue-light">
+    <section id="formule" className="pt-3 pb-16 md:py-24 bg-blue-light">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         {/* Heading — shown above the video on mobile only; grouped with body text on desktop */}
         <div className="text-center order-1 md:hidden">
@@ -41,12 +41,14 @@ export default function Formula() {
           </h2>
           <div className="hidden md:block divider-blue mt-4 mx-auto md:mx-0" />
 
-          <p className="mt-6 md:mt-6 text-xl font-semibold text-blue-dark">
-            {dict.formula.lead}
-          </p>
-          <p className="mt-3 text-lg text-gray-700">
-            {dict.formula.body}
-          </p>
+          <div className="mt-6 md:mt-6 border border-blue-bright/30 rounded-xl px-5 py-4">
+            <p className="text-xl font-semibold text-blue-dark">
+              {dict.formula.lead}
+            </p>
+            <p className="mt-3 text-lg text-gray-700">
+              {dict.formula.body}
+            </p>
+          </div>
         </div>
 
         <div className="flex-1 w-full flex justify-center order-4 md:order-3">
