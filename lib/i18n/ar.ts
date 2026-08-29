@@ -85,7 +85,7 @@ export const ar: Dictionary = {
     items: [
       { name: 'Karim B.', text: 'بعد شهرين، تراجع التساقط بشكل ملحوظ. شعري أصبح أكثف. أنصح به بشدة!' },
       { name: 'Youssef M.', text: 'Résultats visibles après seulement 6 semaines. Produit naturel et efficace.' },
-      { name: 'Mehdi S.', text: 'جربت عدة منتجات، وOKA Nutrition DHT Control هو الوحيد الذي نجح فعلاً.' },
+      { name: 'Mehdi S.', text: 'جربت عدة منتجات، وهذا المنتج هو الوحيد الذي نجح فعلاً.' },
       { name: 'Hamza R.', text: "ahsn haja saraha produit li nf3ni bzaf makntsh kantsna had difference " },
       { name: 'marouan O.', text: 'تغيير حقيقي خلال أسابيع قليلة. شعر أقوى وتساقط أقل عند الغسل.' },
     ],
