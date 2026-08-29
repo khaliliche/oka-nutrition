@@ -79,11 +79,11 @@ export const fr: Dictionary = {
     heading: 'Ils ont retrouvé confiance',
     ratingBadge: '+276 hommes satisfaits',
         items: [
-      { name: 'Karim B.', text: 'Après 2 mois, la chute a nettement diminué. Mes cheveux sont plus épais. Je recommande !' },
-      { name: 'Youssef M.', text: 'بعد 6 أسابيع فقط، لاحظت تحسنًا واضحًا في كثافة شعري. منتج طبيعي وفعال.' },
-      { name: 'Mehdi S.', text: "J'ai essayé plusieurs produits, OKA Nutrition DHT Control est le seul qui a vraiment fonctionné." },
-      { name: 'Hamza R.', text: 'التساقط توقف تقريبًا بعد 3 أشهر من الاستعمال. جودة ممتازة وأنصح به لكل رجل يعاني من هذه المشكلة.' },
-      { name: 'Yassine T.', text: 'Un vrai changement en quelques semaines. Cheveux plus forts et moins de chute au lavage.' },
+      { name: 'Karim B.', text: 'بعد شهرين، تراجع التساقط بشكل ملحوظ. شعري أصبح أكثف. أنصح به بشدة!' },
+      { name: 'Youssef M.', text: 'Résultats visibles après seulement 6 semaines. Produit naturel et efficace.' },
+      { name: 'Mehdi S.', text: 'جربت عدة منتجات، وOKA Nutrition DHT Control هو الوحيد الذي نجح فعلاً.' },
+      { name: 'Hamza R.', text: "ahsn haja saraha produit li nf3ni bzaf makntsh kantsna had difference " },
+      { name: 'marouan O.', text: 'تغيير حقيقي خلال أسابيع قليلة. شعر أقوى وتساقط أقل عند الغسل.' },
     ],
   },
   faq: {
