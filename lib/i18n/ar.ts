@@ -2,7 +2,7 @@ import { Dictionary } from '@/types/i18n';
 
 export const ar: Dictionary = {
   meta: {
-    title: 'أوكا نيوتريشن الحل الطبيعي لتساقط الشعر',
+    title: 'أوكا نيوتريشن – الحل الطبيعي لتساقط الشعر',
     description: 'اكتشف أوكا نيوتريشن، المكمل الغذائي الطبيعي 100% لاستعادة شعر قوي وصحي. توصيل مجاني في جميع أنحاء المغرب.',
   },
   header: {
@@ -21,10 +21,10 @@ export const ar: Dictionary = {
       offre2: { title: 'العلاج الموصى به', badge: 'شهر مجاني', description: '3 عبوات 2+1' },
       offre1: { title: 'علاج شهر واحد', badge: '', description: 'عبوة واحدة — شهر' },
     },
-        desktop: {
+    desktop: {
       headline1: 'شعر أقوى.',
       headline2: 'روتين أكثر استهدافاً.',
-      description: 'DHT Control  التركيبة الكاملة لمحاربة تساقط الشعر وتقويته.',
+      description: 'DHT Control – التركيبة الكاملة لمحاربة تساقط الشعر وتقويته.',
       originalPrice: '199 درهم',
       oneMonthLabel: 'علاج شهر واحد بدءاً من',
       threeMonthLabel: 'علاج 3 أشهر بسعر',
@@ -39,7 +39,7 @@ export const ar: Dictionary = {
     ],
   },
   formula: {
-    heading: 'تركيبة DHT Control ',
+    heading: 'تركيبة DHT Control —',
     headingHighlight: 'للرجال',
     lead: 'تركيبة مصممة خصيصًا لشعر الرجال.',
     body: 'تجمع DHT Control بين مكونات مختارة لدعم صحة وقوة الشعر يوميًا.',
@@ -111,7 +111,7 @@ export const ar: Dictionary = {
     chooseOffer: 'اختر عرضك',
     deliveryInfo: 'معلومات التوصيل',
     offre1: { title: 'تجريبي', badge: '🌟 الأكثر طلبًا', description: 'عبوة واحدة – علاج شهر' },
-    offre2: { title: 'العلاج الكامل', badge: '⭐ أفضل قيمة', description: '3 عبوات – اشترِ 2 واحصل على 1' },
+    offre2: { title: 'العلاج الموصى به', badge: '⭐ أفضل قيمة', description: '3 عبوات – اشترِ عبوتين واحصل على الثالثة مجانًا 🎁' },
     commander: 'اطلب الآن',
     fullName: 'الاسم الكامل',
     fullNamePlaceholder: 'اسمك ونسبك',
@@ -125,7 +125,7 @@ export const ar: Dictionary = {
     confirmWhatsapp: 'تأكيد عبر واتساب',
     selectPrompt: 'اختر عرضًا لإدخال معلومات التوصيل.',
     whatsappMessage: (title, description, price, name, phone, city, address) =>
-      `مرحبًا، أرغب في طلب عرض "${title}" (${description}) بسعر ${price} درهم.\n\nالاسم الكامل: ${name}\nالهاتف: ${phone}\nالمدينة: ${city}\nالعنوان الكامل: ${address}`,
+      `مرحبًا، أرغب في طلب عرض ${title}:\n${description}\nبسعر ${price} درهم.\n\nالاسم الكامل: ${name}\nالهاتف: ${phone}\nالمدينة: ${city}\nالعنوان الكامل: ${address}`,
   },
   whatsappButton: { message: 'مرحبًا، أرغب في معرفة المزيد عن OKA Nutrition DHT Control.' },
 };

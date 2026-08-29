@@ -2,7 +2,7 @@ import { Dictionary } from '@/types/i18n';
 
 export const fr: Dictionary = {
   meta: {
-    title: 'OKA Nutrition  Solution naturelle contre la chute de cheveux',
+    title: 'OKA Nutrition – Solution naturelle contre la chute de cheveux',
     description: 'Découvrez OKA Nutrition, le complément alimentaire 100% naturel pour retrouver une chevelure forte et en pleine santé. Livraison gratuite au Maroc.',
   },
   header: {
@@ -21,10 +21,10 @@ export const fr: Dictionary = {
       offre2: { title: 'Cure recommandée', badge: '1 mois offert', description: '3 flacons 2+1' },
       offre1: { title: 'Cure 1 mois', badge: '', description: '1 flacon — 1 mois' },
     },
-        desktop: {
+    desktop: {
       headline1: 'Des cheveux plus forts.',
       headline2: 'Une routine plus ciblée.',
-      description: 'DHT Control  La formule complète pour lutter contre la chute et renforcer vos cheveux.',
+      description: 'DHT Control – La formule complète pour lutter contre la chute et renforcer vos cheveux.',
       originalPrice: '199 DH',
       oneMonthLabel: 'Cure 1 mois dès',
       threeMonthLabel: 'Cure 3 mois à',
@@ -39,7 +39,7 @@ export const fr: Dictionary = {
     ],
   },
   formula: {
-    heading: 'Formule DHT Control ',
+    heading: 'Formule DHT Control —',
     headingHighlight: 'Pour Homme',
     lead: 'Une formule pensée pour les cheveux des hommes.',
     body: 'DHT Control associe des actifs sélectionnés pour accompagner la santé et la force du cheveu au quotidien.',
@@ -111,7 +111,7 @@ export const fr: Dictionary = {
     chooseOffer: 'Choisissez votre offre',
     deliveryInfo: 'Vos informations de livraison',
     offre1: { title: 'Découverte', badge: '🌟 Populaire', description: '1 flacon – cure 1 mois' },
-    offre2: { title: 'Cure complète', badge: '⭐ Meilleure valeur', description: '3 flacons – 2 achetés + 1 offert' },
+    offre2: { title: 'Cure recommandée', badge: '⭐ Meilleure valeur', description: '2 flacons achetés + 1 offert' },
     commander: 'Commander',
     fullName: 'Nom complet',
     fullNamePlaceholder: 'Votre nom et prénom',
@@ -125,7 +125,7 @@ export const fr: Dictionary = {
     confirmWhatsapp: 'Confirmer sur WhatsApp',
     selectPrompt: 'Choisissez une offre pour renseigner vos informations de livraison.',
     whatsappMessage: (title, description, price, name, phone, city, address) =>
-      `Bonjour, je souhaite commander l'offre "${title}" (${description}) au prix de ${price} DH.\n\nNom complet : ${name}\nTéléphone : ${phone}\nVille : ${city}\nAdresse exacte : ${address}`,
+      `Bonjour, je souhaite commander l'offre « ${title} » (${description}) au prix de ${price} DH.\n\nNom complet : ${name}\nTéléphone : ${phone}\nVille : ${city}\nAdresse exacte : ${address}`,
   },
   whatsappButton: { message: 'Bonjour, je souhaite en savoir plus sur OKA Nutrition DHT Control.' },
 };
