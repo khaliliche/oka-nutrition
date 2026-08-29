@@ -13,7 +13,6 @@ import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import OrderModal from '@/components/OrderModal';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import ProductOffers from '@/components/ProductOffers';
 
 export default function HomePage() {
   return (
@@ -26,9 +25,6 @@ export default function HomePage() {
         </div>
         <div className="order-2 lg:order-3">
           <Benefits />
-        </div>
-        <div className="order-3 lg:order-2">
-          <ProductOffers />
         </div>
         <div className="order-4">
           <Formula />
