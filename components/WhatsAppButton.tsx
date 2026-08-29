@@ -4,7 +4,7 @@ import { useLocale } from '@/context/LocaleContext';
 
 export default function WhatsAppButton() {
   const { dict } = useLocale();
-  const phoneNumber = '212661972751';
+  const phoneNumber = '212663822682';
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     dict.whatsappButton.message
   )}`;

@@ -98,7 +98,7 @@ export default function OrderModal() {
       formData.address
     );
 
-    const url = `https://wa.me/212661972751?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/212663822682?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     handleClose();
   };

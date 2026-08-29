@@ -93,9 +93,12 @@ export const fr: Dictionary = {
   faq: {
     heading: 'Questions fréquentes',
     items: [
-      { q: 'Comment prendre OKA Nutrition ?', a: "Prenez 2 gélules par jour avec un grand verre d'eau, de préférence au cours d'un repas. Une cure de 3 mois est recommandée pour des résultats optimaux." },
-      { q: 'OKA Nutrition est-il sans danger ?', a: 'Oui, notre complément est 100% naturel et sans effets secondaires. Il est fabriqué dans des laboratoires certifiés et respecte les normes de qualité.' },
-      { q: 'Quels sont les délais de livraison ?', a: 'La livraison est gratuite partout au Maroc et se fait sous 48 à 72 heures ouvrables après validation de votre commande.' },
+      { q: 'Comment prendre DHT Control ?', a: 'Prendre 2 gélules par jour, de préférence le matin avec un verre d’eau, idéalement au cours d’un repas. Un flacon de 60 gélules correspond à 1 mois d’utilisation.' },
+      { q: 'Au bout de combien de temps peut-on constater des résultats ?', a: 'Le cycle du cheveu demande du temps et les résultats peuvent varier d’une personne à l’autre. Une utilisation régulière sur plusieurs semaines est recommandée, avec une cure de 3 mois pour évaluer pleinement la routine.' },
+      { q: 'Combien de temps dure une cure ?', a: 'Un flacon correspond à 1 mois de cure. Pour une routine complète, nous recommandons généralement une cure de 3 mois.' },
+      { q: 'Y a-t-il des précautions d’emploi ?', a: 'DHT Control est un complément alimentaire destiné aux adultes. Respectez la dose quotidienne recommandée. En cas de traitement médical, de problème de santé ou de doute, demandez conseil à un professionnel de santé avant utilisation.' },
+      { q: 'Quels sont les délais de livraison ?', a: 'Les commandes sont généralement livrées sous 24 à 48 heures ouvrées, selon la ville. La livraison est gratuite partout au Maroc.' },
+      { q: 'Comment s’effectue le paiement ?', a: 'Le paiement s’effectue simplement à la réception de votre commande ou par virement bancaire.' },
     ],
   },
   finalCta: {
