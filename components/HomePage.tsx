@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Benefits from '@/components/Benefits';
 import Formula from '@/components/Formula';
-import Offers from '@/components/Offers';
 import Results from '@/components/Results';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
@@ -28,9 +27,6 @@ export default function HomePage() {
         </div>
         <div className="order-4">
           <Formula />
-        </div>
-        <div className="order-5">
-          <Offers />
         </div>
         <div className="order-6">
           <Results />
