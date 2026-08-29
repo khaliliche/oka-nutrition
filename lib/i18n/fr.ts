@@ -69,7 +69,7 @@ export const fr: Dictionary = {
     caption: "Résultats constatés après 3 mois d'utilisation",
     efficacyLabel: "d'efficacité constatée",
     testimonial: {
-      text: "Après 3 mois avec DHT Control, la différence est vraiment visible. Ma zone frontale s'est densifiée et je reçois plein de compliments sur mes cheveux.",
+      text: "Après 6 mois avec DHT Control, la différence est vraiment visible. Ma zone frontale s'est densifiée et je reçois plein de compliments sur mes cheveux.",
       name: 'Amine K., 34 ans',
     },
     stats: [
