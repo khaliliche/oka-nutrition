@@ -49,7 +49,7 @@ export default function Header() {
               alt="OKA Nutrition"
               width={110}
               height={110}
-              className="h-12 w-auto object-contain"
+              className="h-22 w-auto object-contain"
               priority
             />
           </Link>
