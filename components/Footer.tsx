@@ -20,7 +20,7 @@ export default function Footer() {
             alt="OKA Nutrition"
             width={110}
             height={110}
-            className="h-20 w-auto object-contain"
+            className="h-35 w-auto object-contain"
           />
 
           <p className="mt-4 text-blue-light/80 text-sm leading-relaxed max-w-xs">
