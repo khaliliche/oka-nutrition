@@ -20,7 +20,7 @@ export default function FinalCTA() {
             {dict.finalCta.body}
           </p>
 
-          <div className="mt-6 relative w-full aspect-[4/5] max-w-sm mx-auto rounded-xl overflow-hidden border border-blue-bright/20">
+          <div className="mt-6 relative w-full aspect-[4/5] max-w-[220px] mx-auto rounded-xl overflow-hidden border border-blue-bright/20">
             <Image
               src={`/images/offre-2${suffix}.jpg`}
               alt={dict.finalCta.heading}
