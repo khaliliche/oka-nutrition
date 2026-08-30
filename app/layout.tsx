@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { Inter, Playfair_Display, Cairo } from 'next/font/google';
 import './globals.css';
 import { OrderProvider } from '@/context/OrderContext';
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${playfair.variable} ${cairo.variable}`}>
         <HtmlAttributes />
         <OrderProvider>{children}</OrderProvider>
+        <Analytics />
       </body>
     </html>
   );

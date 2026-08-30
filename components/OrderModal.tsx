@@ -85,8 +85,26 @@ export default function OrderModal() {
     formData.city.trim() &&
     formData.address.trim();
 
-  const handleSubmit = () => {
+    const handleSubmit = async () => {
     if (!chosenOffer || !isFormValid) return;
+
+    const quantity = chosenOffer.id === 'offre-2' ? 3 : 1;
+
+    // Save order to the database (fire and forget — don't block WhatsApp if it fails)
+    fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        city: formData.city,
+        address: formData.address,
+        offerTitle: chosenOffer.title,
+        offerDescription: chosenOffer.description,
+        quantity,
+        totalAmount: chosenOffer.price,
+      }),
+    }).catch((err) => console.error('Failed to save order:', err));
 
     const message = dict.orderModal.whatsappMessage(
       chosenOffer.title,
