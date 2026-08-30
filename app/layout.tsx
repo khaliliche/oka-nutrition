@@ -18,6 +18,14 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: 'OKA Nutrition – Solution naturelle contre la chute de cheveux',
   description: 'Découvrez OKA Nutrition, le complément alimentaire 100% naturel pour retrouver une chevelure forte et en pleine santé. Livraison gratuite au Maroc.',
+  metadataBase: new URL('https://okanutrition.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      fr: '/',
+      ar: '/ar',
+    },
+  },
 };
 
 export default function RootLayout({
