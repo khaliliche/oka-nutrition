@@ -25,9 +25,9 @@ export async function ensureTables() {
     );
   `;
 
-  await sql`
+    await sql`
     INSERT INTO stock (product_name, quantity)
-    VALUES ('DHT Control')
+    VALUES ('DHT Control', 100)
     ON CONFLICT (product_name) DO NOTHING;
   `;
 }
