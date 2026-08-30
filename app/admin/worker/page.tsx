@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function WorkerLoginPage() {
   const router = useRouter();
@@ -30,12 +31,22 @@ export default function WorkerLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div style={{ backgroundColor: '#0E1C4D' }} className="min-h-screen flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit}
         className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm"
       >
-        <h1 className="text-xl font-bold text-center text-gray-800">Espace Worker</h1>
+        <div className="flex justify-center">
+          <Image
+            src="/images/logo-new.png"
+            alt="OKA Nutrition"
+            width={90}
+            height={90}
+            className="h-16 w-auto object-contain"
+          />
+        </div>
+
+        <h1 className="text-xl font-bold text-center text-gray-800 mt-3">Espace Worker</h1>
         <p className="text-sm text-gray-500 text-center mt-1">OKA Nutrition — Administration</p>
 
         <div className="mt-6">
