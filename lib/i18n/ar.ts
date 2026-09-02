@@ -1,4 +1,4 @@
-import { Dictionary } from '@/types/i18n';
+﻿import { Dictionary } from '@/types/i18n';
 
 export const ar: Dictionary = {
   meta: {
@@ -134,8 +134,12 @@ export const ar: Dictionary = {
     back: 'رجوع',
     confirmWhatsapp: 'تأكيد عبر واتساب',
     selectPrompt: 'اختر عرضًا لإدخال معلومات التوصيل.',
-    whatsappMessage: (title, description, price, name, phone, city, address) =>
-      `مرحبًا، أرغب في طلب عرض ${title}:\n${description}\nبسعر ${price} درهم.\n\nالاسم الكامل: ${name}\nالهاتف: ${phone}\nالمدينة: ${city}\nالعنوان الكامل: ${address}`,
+    whatsappMessage: (quantity, price, name, phone, city, address) => {
+      const productLine = quantity === 3
+        ? '🧴 العلاج الموصى به — 3 عبوات (اشترِ 2 واحصل على 1)'
+        : '🧴 علاج شهر واحد — عبوة واحدة';
+      return `✅ تم تأكيد الطلب!\nمرحبًا 👋\nلقد استلمنا طلبكم من Öka Nutrition.\n\n${productLine}\n💰 المجموع: ${price} درهم\n👤 الاسم الكامل: ${name}\n📞 الهاتف: ${phone}\n📍 المدينة: ${city}\n📦 العنوان: ${address}\n🚚 توصيل مجاني`;
+    },
   },
   whatsappButton: { message: 'مرحبًا، أرغب في معرفة المزيد عن OKA Nutrition DHT Control.' },
 };

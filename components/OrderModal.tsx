@@ -46,7 +46,7 @@ export default function OrderModal() {
     {
       id: 'offre-1',
       title: dict.orderModal.offre1.title,
-      price: 199,
+      price: 175,
       badge: dict.orderModal.offre1.badge,
       description: dict.orderModal.offre1.description,
       image: `/images/offre-1${suffix}.jpg`,
@@ -118,8 +118,7 @@ export default function OrderModal() {
     }
 
     const message = dict.orderModal.whatsappMessage(
-      chosenOffer.title,
-      chosenOffer.description,
+      quantity,
       chosenOffer.price,
       formData.name,
       formData.phone,

@@ -1,4 +1,4 @@
-export type Locale = 'fr' | 'ar';
+﻿export type Locale = 'fr' | 'ar';
 
 export type Dictionary = {
   meta: { title: string; description: string };
@@ -106,7 +106,7 @@ export type Dictionary = {
     back: string;
     confirmWhatsapp: string;
     selectPrompt: string;
-    whatsappMessage: (title: string, description: string, price: number, name: string, phone: string, city: string, address: string) => string;
+    whatsappMessage: (quantity: number, price: number, name: string, phone: string, city: string, address: string) => string;
   };
   whatsappButton: { message: string };
 };
