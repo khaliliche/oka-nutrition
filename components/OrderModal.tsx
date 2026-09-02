@@ -106,6 +106,17 @@ export default function OrderModal() {
       }),
     }).catch((err) => console.error('Failed to save order:', err));
 
+    // TikTok pixel: track the order as a conversion event
+    if (typeof window !== 'undefined' && (window as any).ttq) {
+      (window as any).ttq.track('PlaceAnOrder', {
+        content_id: chosenOffer.id,
+        content_name: chosenOffer.title,
+        quantity,
+        value: chosenOffer.price,
+        currency: 'MAD',
+      });
+    }
+
     const message = dict.orderModal.whatsappMessage(
       chosenOffer.title,
       chosenOffer.description,
