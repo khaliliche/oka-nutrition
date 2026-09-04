@@ -1,7 +1,10 @@
 import { sql, ensureTables } from '@/lib/db';
+import { getCurrentRole } from '@/lib/auth';
 
 export default async function DashboardPage() {
   await ensureTables();
+  const role = await getCurrentRole();
+  const isWorker = role === 'worker';
 
   const todayResult = await sql`
     SELECT COUNT(*)::int AS count FROM orders WHERE created_at::date = CURRENT_DATE;
@@ -29,7 +32,7 @@ export default async function DashboardPage() {
     <div>
       <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+      <div className={`grid grid-cols-1 sm:grid-cols-${isWorker ? '2' : '3'} gap-4 mt-6`}>
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
           <p className="text-sm text-gray-500">Commandes aujourd'hui</p>
           <p className="text-3xl font-bold text-gray-800 mt-1">{todayCount}</p>
@@ -38,10 +41,12 @@ export default async function DashboardPage() {
           <p className="text-sm text-gray-500">Commandes en attente</p>
           <p className="text-3xl font-bold text-orange-500 mt-1">{pendingCount}</p>
         </div>
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <p className="text-sm text-gray-500">Chiffre d'affaires (ce mois)</p>
-          <p className="text-3xl font-bold text-green-600 mt-1">{monthRevenue} DH</p>
-        </div>
+        {!isWorker && (
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+            <p className="text-sm text-gray-500">Chiffre d'affaires (ce mois)</p>
+            <p className="text-3xl font-bold text-green-600 mt-1">{monthRevenue} DH</p>
+          </div>
+        )}
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 mt-8 overflow-hidden">

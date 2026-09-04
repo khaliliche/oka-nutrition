@@ -131,8 +131,13 @@ export const fr: Dictionary = {
     cityPlaceholder: 'Ex : Casablanca',
     address: 'Adresse exacte',
     addressPlaceholder: 'Rue, numéro, quartier, repère...',
-    back: 'Retour',
+        back: 'Retour',
     confirmWhatsapp: 'Confirmer sur WhatsApp',
+    noWhatsapp: "Je n'ai pas WhatsApp",
+    confirmOrder: 'Confirmer ma commande',
+    orderReceivedTitle: 'Commande reçue ✅',
+    orderReceivedMessage: 'Merci ! Nous avons bien reçu votre commande. Notre équipe vous contactera bientôt pour confirmer la livraison.',
+    close: 'Fermer',
     selectPrompt: 'Choisissez une offre pour renseigner vos informations de livraison.',
     whatsappMessage: (quantity, price, name, phone, city, address) => {
       const productLine = quantity === 3

@@ -25,8 +25,9 @@ export default function OrderModal() {
   const { isOpen, selectedOffer, closeModal } = useOrder();
   const { dict, locale } = useLocale();
   const suffix = locale === 'ar' ? '-ar' : '';
-  const [step, setStep] = useState<'offers' | 'form'>('offers');
+  const [step, setStep] = useState<'offers' | 'form' | 'success'>('offers');
   const [chosenOffer, setChosenOffer] = useState<Offer | null>(null);
+  const [noWhatsapp, setNoWhatsapp] = useState(false);
 
   useEffect(() => {
     if (isOpen && selectedOffer) {
@@ -67,6 +68,7 @@ export default function OrderModal() {
     setStep('offers');
     setChosenOffer(null);
     setFormData({ name: '', phone: '', city: '', address: '' });
+    setNoWhatsapp(false);
     closeModal();
   };
 
@@ -85,12 +87,12 @@ export default function OrderModal() {
     formData.city.trim() &&
     formData.address.trim();
 
-    const handleSubmit = async () => {
+  const handleSubmit = async () => {
     if (!chosenOffer || !isFormValid) return;
 
     const quantity = chosenOffer.id === 'offre-2' ? 3 : 1;
 
-    // Save order to the database (fire and forget — don't block WhatsApp if it fails)
+    // Save order to the database (fire and forget — don't block on it)
     fetch('/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -117,6 +119,12 @@ export default function OrderModal() {
       });
     }
 
+    if (noWhatsapp) {
+      // No WhatsApp: skip opening wa.me, just show the confirmation step
+      setStep('success');
+      return;
+    }
+
     const message = dict.orderModal.whatsappMessage(
       quantity,
       chosenOffer.price,
@@ -136,7 +144,11 @@ export default function OrderModal() {
       <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-blue-dark">
-            {step === 'offers' ? dict.orderModal.chooseOffer : dict.orderModal.deliveryInfo}
+            {step === 'offers'
+              ? dict.orderModal.chooseOffer
+              : step === 'form'
+              ? dict.orderModal.deliveryInfo
+              : dict.orderModal.orderReceivedTitle}
           </h2>
           <button
             onClick={handleClose}
@@ -251,6 +263,16 @@ export default function OrderModal() {
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-bright resize-none"
                 />
               </div>
+
+              <label className="flex items-center gap-2 text-sm text-gray-600 select-none cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={noWhatsapp}
+                  onChange={(e) => setNoWhatsapp(e.target.checked)}
+                  className="w-4 h-4 accent-blue-bright"
+                />
+                {dict.orderModal.noWhatsapp}
+              </label>
             </div>
 
             <div className="flex gap-3 mt-6">
@@ -265,9 +287,22 @@ export default function OrderModal() {
                 disabled={!isFormValid}
                 className="btn-primary flex-1 py-3 disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {dict.orderModal.confirmWhatsapp}
+                {noWhatsapp ? dict.orderModal.confirmOrder : dict.orderModal.confirmWhatsapp}
               </button>
             </div>
+          </div>
+        )}
+
+        {step === 'success' && (
+          <div className="text-center py-6">
+            <p className="text-5xl mb-4">✅</p>
+            <p className="text-gray-700">{dict.orderModal.orderReceivedMessage}</p>
+            <button
+              onClick={handleClose}
+              className="btn-primary mt-6 py-3 px-10"
+            >
+              {dict.orderModal.close}
+            </button>
           </div>
         )}
 

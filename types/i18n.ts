@@ -105,6 +105,11 @@ export type Dictionary = {
     addressPlaceholder: string;
     back: string;
     confirmWhatsapp: string;
+    noWhatsapp: string;
+    confirmOrder: string;
+    orderReceivedTitle: string;
+    orderReceivedMessage: string;
+    close: string;
     selectPrompt: string;
     whatsappMessage: (quantity: number, price: number, name: string, phone: string, city: string, address: string) => string;
   };

@@ -51,7 +51,7 @@ export default function Hero() {
 
   return (
     <section id="dht-control" className="relative bg-blue-light overflow-hidden">
-      {/* Desktop / laptop layout — split hero, untouched on phone & tablet */}
+      {/* Desktop / laptop layout — split hero, price card removed (moved to shared packs section below) */}
       <div className="hidden lg:grid lg:grid-cols-2 lg:items-center">
         <div className="py-16 px-10 xl:px-20">
           <h1 className="font-heading text-4xl xl:text-5xl font-bold leading-tight text-blue-dark">
@@ -77,32 +77,6 @@ export default function Hero() {
               </div>
             ))}
           </div>
-
-          <div className="mt-8 max-w-md rounded-2xl border border-black/5 bg-white shadow-lg px-6 py-5">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm text-gray-500">{dict.hero.desktop.oneMonthLabel}</p>
-                <p className="font-heading text-xl font-bold text-blue-dark">
-                  175 DH{' '}
-                  <span className="text-gray-400 line-through font-normal text-base">
-                    {dict.hero.desktop.originalPrice}
-                  </span>
-                </p>
-              </div>
-              <div className="h-10 w-px bg-gray-200 shrink-0" />
-              <div>
-                <p className="text-sm text-gray-500">{dict.hero.desktop.threeMonthLabel}</p>
-                <p className="font-heading text-xl font-bold text-blue-dark">349 DH</p>
-              </div>
-            </div>
-
-            <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-1.5 text-xs font-bold text-blue-dark">
-              <span aria-hidden="true">🇲🇦</span>
-              <span>
-                {dict.hero.shipping} — {dict.hero.payment}
-              </span>
-            </div>
-          </div>
         </div>
 
         <div className="relative self-stretch min-h-[560px] xl:min-h-[640px]">
@@ -116,18 +90,20 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Phone & tablet layout — unchanged */}
+      {/* Phone & tablet top banner image — mobile/tablet only */}
       <div className="lg:hidden">
-      <div className="relative w-full aspect-[500/400] bg-blue-light">
-        <Image
-          src={`/images/hero-banner${suffix}.png`}
-          alt="OKA Nutrition DHT Control"
-          fill
-          className="object-contain"
-          priority
-        />
+        <div className="relative w-full aspect-[500/400] bg-blue-light">
+          <Image
+            src={`/images/hero-banner${suffix}.png`}
+            alt="OKA Nutrition DHT Control"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
       </div>
 
+      {/* Pack cards section — now shown on phone, tablet AND desktop */}
       <div className="bg-blue-light py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
@@ -199,6 +175,7 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Shipping / payment bar — now shown on phone, tablet AND desktop */}
       <div style={{ backgroundColor: "#0E1C4D" }} className="py-3.5">
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm font-bold text-white text-center">
           <span className="inline-flex items-center gap-2">
@@ -215,7 +192,6 @@ export default function Hero() {
             {dict.hero.payment}
           </span>
         </div>
-      </div>
       </div>
     </section>
   );

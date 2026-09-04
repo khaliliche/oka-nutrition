@@ -131,8 +131,13 @@ export const ar: Dictionary = {
     cityPlaceholder: 'مثال: الدار البيضاء',
     address: 'العنوان الكامل',
     addressPlaceholder: 'الشارع، الرقم، الحي، علامة مميزة...',
-    back: 'رجوع',
+        back: 'رجوع',
     confirmWhatsapp: 'تأكيد عبر واتساب',
+    noWhatsapp: 'ليس لدي واتساب',
+    confirmOrder: 'تأكيد طلبي',
+    orderReceivedTitle: 'تم استلام الطلب ✅',
+    orderReceivedMessage: 'شكرًا! لقد استلمنا طلبكم بنجاح. سيتصل بكم فريقنا قريبًا لتأكيد التوصيل.',
+    close: 'إغلاق',
     selectPrompt: 'اختر عرضًا لإدخال معلومات التوصيل.',
     whatsappMessage: (quantity, price, name, phone, city, address) => {
       const productLine = quantity === 3

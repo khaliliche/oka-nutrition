@@ -1,7 +1,10 @@
 import { sql, ensureTables } from '@/lib/db';
+import { getCurrentRole } from '@/lib/auth';
 
 export default async function StatistiquesPage() {
   await ensureTables();
+  const role = await getCurrentRole();
+  const isWorker = role === 'worker';
 
   const totalRevenueResult = await sql`
     SELECT COALESCE(SUM(total_amount), 0)::float AS total FROM orders WHERE status != 'Annulée';
@@ -42,11 +45,13 @@ export default async function StatistiquesPage() {
     <div>
       <h1 className="text-2xl font-bold text-gray-800">Statistiques</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-          <p className="text-sm text-gray-500">Chiffre d'affaires total</p>
-          <p className="text-3xl font-bold text-green-600 mt-1">{totalRevenue} DH</p>
-        </div>
+      <div className={`grid grid-cols-1 sm:grid-cols-${isWorker ? '1' : '2'} gap-4 mt-6`}>
+        {!isWorker && (
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+            <p className="text-sm text-gray-500">Chiffre d'affaires total</p>
+            <p className="text-3xl font-bold text-green-600 mt-1">{totalRevenue} DH</p>
+          </div>
+        )}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
           <p className="text-sm text-gray-500">Nombre total de commandes</p>
           <p className="text-3xl font-bold text-gray-800 mt-1">{totalOrders}</p>
@@ -76,7 +81,7 @@ export default async function StatistiquesPage() {
               <div key={row.offer_title} className="flex items-center justify-between text-sm">
                 <span className="text-gray-600">{row.offer_title}</span>
                 <span className="font-semibold text-gray-800">
-                  {row.count} — {row.revenue} DH
+                  {row.count}{!isWorker && ` — ${row.revenue} DH`}
                 </span>
               </div>
             ))}
