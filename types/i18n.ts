@@ -103,10 +103,12 @@ export type Dictionary = {
     cityPlaceholder: string;
     address: string;
     addressPlaceholder: string;
-    back: string;
-    confirmWhatsapp: string;
-    noWhatsapp: string;
+     back: string;
     confirmOrder: string;
+    whatsappStepTitle: string;
+    whatsappStepMessage: string;
+    confirmWhatsapp: string;
+    skipWhatsapp: string;
     orderReceivedTitle: string;
     orderReceivedMessage: string;
     close: string;
