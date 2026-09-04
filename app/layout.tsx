@@ -1,37 +1,50 @@
-﻿'use client';
+﻿import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Inter, Playfair_Display, Cairo } from 'next/font/google';
+import './globals.css';
+import { OrderProvider } from '@/context/OrderContext';
+import HtmlAttributes from '@/components/HtmlAttributes';
+import TikTokPixel from '@/components/TikTokPixel';
+import MetaPixel from '@/components/MetaPixel';
 
-import Script from 'next/script';
+const inter = Inter({ subsets: ['latin'] });
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+});
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'],
+  variable: '--font-cairo',
+});
 
-const META_PIXEL_ID = '1033463112850233';
-const TEST_EVENT_CODE = 'TEST64258';
+export const metadata: Metadata = {
+  title: 'OKA Nutrition – Solution naturelle contre la chute de cheveux',
+  description: 'Découvrez OKA Nutrition, le complément alimentaire 100% naturel pour retrouver une chevelure forte et en pleine santé. Livraison gratuite au Maroc.',
+  metadataBase: new URL('https://okanutrition.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      fr: '/',
+      ar: '/ar',
+    },
+  },
+};
 
-export default function MetaPixel() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
-      <Script id="meta-pixel" strategy="afterInteractive">
-        {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${META_PIXEL_ID}');
-          fbq('trackSingle', '${META_PIXEL_ID}', 'PageView', {}, {test_event_code: '${TEST_EVENT_CODE}'});
-        `}
-      </Script>
-      <noscript>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
-      </noscript>
-    </>
+    <html lang="fr" className="scroll-smooth">
+      <body className={`${inter.className} ${playfair.variable} ${cairo.variable}`}>
+        <TikTokPixel />
+        <MetaPixel />
+        <HtmlAttributes />
+        <OrderProvider>{children}</OrderProvider>
+        <Analytics />
+      </body>
+    </html>
   );
 }
