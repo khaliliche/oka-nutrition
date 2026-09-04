@@ -6,6 +6,7 @@ import './globals.css';
 import { OrderProvider } from '@/context/OrderContext';
 import HtmlAttributes from '@/components/HtmlAttributes';
 import TikTokPixel from '@/components/TikTokPixel';
+import MetaPixel from '@/components/MetaPixel';
 
 const inter = Inter({ subsets: ['latin'] });
 const playfair = Playfair_Display({
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <body className={`${inter.className} ${playfair.variable} ${cairo.variable}`}>
         <TikTokPixel />
+        <MetaPixel />
         <HtmlAttributes />
         <OrderProvider>{children}</OrderProvider>
         <Analytics />
